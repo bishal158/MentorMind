@@ -1,0 +1,23 @@
+    <nav class="mb-2 navbar navbar-expand-md navbar-light sticky-top shadow  bg-light  p-2 bg-white d-flex justify-content-center align-items-center">
+    <div class="container">
+        <a class="navbar-brand justify-content-center align-items-center" routerLink="/home">
+            <span class = "logo-left"><b>MENTOR</b></span><span class = "logo-right"><b>MIND</b></span>
+        </a>
+        <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed" data-bs-target="#navbarNav" aria-controls="navbarNav" [ariaExpanded]="!isCollapsed" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color: black; background-color: black;"></span>
+        </button>
+        <div class="collapse navbar-collapse  justify-content-center align-items-center" id="navbarNav" [ngbCollapse]="isCollapsed" >
+            <ul class="navbar-nav">
+                <li class="nav-item  p-2">
+                    <a class="fs-6 fw-bold nav-text" routerLink="/home/academic">Academic</a>
+                </li>
+                <li class=" p-2">
+                    <a class="fs-6 fw-bold nav-text" routerLink="/home/competitive-programming">Competitive-Programming</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/login"  class="d-flex justify-content-center align-items-center  text-center rounded-3 p-2  fs-6 fw-bold button">Login/Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

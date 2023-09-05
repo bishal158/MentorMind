@@ -1,0 +1,109 @@
+.counter{
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+.total-user-counter{
+  color: #8400c4;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 190px;
+  width: 190px;
+  padding: 30px 25px 25px;
+  margin: 0 auto;
+  border: 3px solid #8400c4;
+  border-radius: 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+.total-user-counter:before,
+.total-user-counter:after{
+  content: "";
+  background: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: 4px 4px 2px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  z-index: -1;
+}
+.total-student-counter{
+  color: #EE436D;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 190px;
+  width: 190px;
+  padding: 30px 25px 25px;
+  margin: 0 auto;
+  border: 3px solid #EE436D;
+  border-radius: 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+.total-student-counter:before,
+.total-student-counter:after{
+  content: "";
+  background: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: 4px 4px 2px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  z-index: -1;
+}
+.total-mentor-counter{
+  color: #F27F21;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 190px;
+  width: 190px;
+  padding: 30px 25px 25px;
+  margin: 0 auto;
+  border: 3px solid #F27F21;
+  border-radius: 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+.total-mentor-counter:before,
+.total-user-counter:after{
+  content: "";
+  background: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: 4px 4px 2px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  z-index: -1;
+}
+.total-course-counter{
+  color: #71B978;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 190px;
+  width: 190px;
+  padding: 30px 25px 25px;
+  margin: 0 auto;
+  border: 3px solid #71B978;
+  border-radius: 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+.total-course-counter:before,
+.total-course-counter:after{
+  content: "";
+  background: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: 4px 4px 2px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  z-index: -1;
+}

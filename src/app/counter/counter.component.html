@@ -1,0 +1,46 @@
+<div id="counter" class="counter-section justify-content-center align-items-center mt-3 mb-3"data-aos="fade-up" data-aos-duration="3000" >
+  <div class="container justify-content-center align-items-center mb-3 mt-3">
+    <p class="justify-content-center align-items-center text-center fw-bolder fs-4" style="color: #8400c4;">Our Members</p>
+    <hr class="text-center" style="color: #8400c4;font-weight: 200;">
+  </div>
+  <div class="container justify-content-center align-items-center">
+      <div class="row">
+          <div class="col-md-3 col-sm-6">
+              <div class="total-user-counter justify-content-center align-items-center shadow">
+                  <div class="counter-icon">
+                      <fa-icon class="fa-2xl fa-fade" [icon]="faUsers" ></fa-icon>
+                  </div>
+                  <span class="counter-value text-dark fw-bolder fs-3 text-end">{{total_users_count}}</span>
+                  <h3 class="fw-bold fs-4 align-items-center justify-content-center">Users</h3>
+              </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+              <div class="total-student-counter justify-content-center align-items-center shadow">
+                  <div class="counter-icon">
+                      <fa-icon [icon]="faGraduationCap" class="fa-fade fa-2xl"></fa-icon>
+                  </div>
+                  <span class="counter-value text-dark fw-bolder fs-3 text-end">{{total_students_count}}</span>
+                  <h3 class="fw-bold fs-4">Students</h3>
+              </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+              <div class="total-mentor-counter justify-content-center align-items-center shadow">
+                  <div class="counter-icon">
+                      <fa-icon [icon]="faChalkboardTeacher" class="fa-fade fa-2xl" ></fa-icon>
+                  </div>
+                  <span class="counter-value text-dark fw-bolder fs-3 text-end">{{total_mentors_count}}</span>
+                  <h3 class="fw-bold fs-4">Mentors</h3>
+              </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+              <div class="total-course-counter justify-content-center align-items-center shadow">
+                  <div class="counter-icon">
+                      <fa-icon [icon]="faBook" class="fa-fade fa-2xl"></fa-icon>
+                  </div>
+                  <span class="counter-value text-dark fw-bolder fs-3 text-end">{{total_courses_count}}</span>
+                  <h3 class="fw-bold fs-4">Courses</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>

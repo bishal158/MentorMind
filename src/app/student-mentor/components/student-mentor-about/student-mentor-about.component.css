@@ -1,0 +1,66 @@
+
+.mentor-image img{
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links li{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5em;
+}
+.social-links h4{
+  background: #8e0bd4;
+  justify-content: center;
+  align-items: center;
+
+}
+.social-links a{
+  text-decoration: none;
+  color: white;
+}
+.social-links li:nth-child(1){
+  background-color: #3b5998;
+}
+.social-links li:nth-child(2){
+  background-color: #00acee;
+}
+.social-links li:nth-child(3){
+  background-color: #0072b1;
+}
+.social-links li:nth-child(4){
+  background-color: #4078c0;
+}
+/* Skills Section */
+.skills li{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5em;
+}
+.skills h4{
+  background: #8e0bd4;
+  justify-content: center;
+  align-items: center;
+
+}
+.skills a{
+  text-decoration: none;
+  color: white;
+}
+.skills li{
+  color: white;
+
+}
+.skills li:nth-child(1){
+  background-color: #3b5998;
+}
+.skills li:nth-child(2){
+  background-color: #00acee;
+}
+.skills li:nth-child(3){
+  background-color: #0072b1;
+}
+.skills li:nth-child(4){
+  background-color: #4078c0;
+}
+
+/*tab set*/
+

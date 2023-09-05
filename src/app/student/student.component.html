@@ -1,0 +1,48 @@
+
+  <div class="main-container d-flex">
+    <div class="sidebar" id="side_nav" [isAnimated]="true" [collapse]="isCollapsed" >
+      <div class="header-box px-2 pt-2 pb-4 d-flex justify-content-between">
+        <button class="btn" (click)="isCollapsed=!isCollapsed"[attr.aria-expanded]="!isCollapsed"aria-controls="side_nav">
+          <span>
+            <fa-icon [icon]="faBarsStaggered"></fa-icon>
+          </span>
+        </button>
+      </div>
+      <ul class="list-unstyled px-2">
+        <li class=""><a routerLink="/student/student-about" class="text-decoration-none px-3 py-0 d-block">Profile</a></li>
+        <li class=""><a routerLink="/student/student-about" class="text-decoration-none px-3 py-0 d-block">Account Settings</a></li>
+        <li class=""><a routerLink="" class="text-decoration-none px-3 py-0 d-block">Write Blogs</a></li>
+        <li class=""><a routerLink="" class="text-decoration-none px-3 py-0 d-block">Share Resources</a></li>
+        <li class=""><button  class="px-3 mx-3 py-0 d-block">Logout</button></li>
+      </ul>
+    </div>
+    <div class="content">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between d-block  ">
+            <a class="navbar-brand" href="#"><span class = "logo-left"><b>MENTOR</b></span><span class="logo-right"><b>MIND</b></span></a>
+            <button class="btn" (click)="isCollapsed=!isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="side_nav">
+              <span><fa-icon [icon]="faBarsStaggered"></fa-icon></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end" >
+            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <img src="assets/images/top-mentors/mentor2.jpg" alt="" id="profile-img">
+                <span>Mafuj Ahmed Bishal</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+      <div class="display-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
