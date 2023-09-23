@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { faKey, faEnvelope, faEyeSlash, faEye,faUser,faIdCard,faBriefcase} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook, faGithub, faGoogle, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import{} from '@fortawesome/free-regular-svg-icons';
+import {
+  faKey,
+  faEnvelope,
+  faEyeSlash,
+  faEye,
+  faUser,
+  faIdCard,
+  faBriefcase,
+  faCircleCheck
+} from '@fortawesome/free-solid-svg-icons';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { match_password } from 'src/custom-validators/match-password';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -16,21 +22,17 @@ export class RegistrationComponent implements OnInit {
     faEnvelope = faEnvelope;
     faEyeSlash = faEyeSlash;
     faEye = faEye;
-    faFacebook = faFacebook;
-    faGoogle = faGoogle;
-    faGithub = faGithub;
-    faLinkedin = faLinkedin;
     faUser = faUser;
     faIdCard = faIdCard;
     faBriefcase = faBriefcase;
   // error message variables
+  fullname_error_message: string | undefined;
   username_error_message: string | undefined;
   studentid_error_message: string | undefined;
   email_error_message: string | undefined;
   role_error_message: string | undefined;
   password_error_message: string | undefined;
   confirmpassword_error_message: string | undefined;
-  confirmpasswordmatch_error_message: string | undefined;
   //for password visibility
     password_visiable:boolean = true;
     password_changetype:boolean = true;
@@ -51,17 +53,19 @@ export class RegistrationComponent implements OnInit {
     constructor(private formbuilder:FormBuilder){}
   //registrationform control
   /*username,email,studentid,password and confirm password validation and regex */
+  fullname_regex= /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/;
   email_regex = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
   studentid_regex = /^\d{9}$/;
   username_regex = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
   //RegisterForm builder
   registrationForm:FormGroup = this.formbuilder.group({
-    username: ['',[Validators.required,Validators.pattern(this.username_regex)]],
-    studentid: ['',[Validators.required,Validators.maxLength(9),Validators.pattern(this.studentid_regex)]],
-    email:['',[Validators.required,Validators.email,Validators.pattern(this.email_regex)]],
-    role:['',[Validators.required]],
-    password:['',[Validators.required,Validators.maxLength(32),Validators.minLength(8)]],
-    confirmpassword:['',[Validators.required,Validators.minLength(8),Validators.maxLength(32)]],
+      fullname: ['',[Validators.required,Validators.pattern(this.fullname_regex)]],
+      username: ['',[Validators.required,Validators.pattern(this.username_regex)]],
+      studentid: ['',[Validators.required,Validators.maxLength(9),Validators.pattern(this.studentid_regex)]],
+      email:['',[Validators.required,Validators.email,Validators.pattern(this.email_regex)]],
+      role:['',[Validators.required]],
+      password:['',[Validators.required,Validators.maxLength(32),Validators.minLength(8)]],
+      confirmpassword:['',[Validators.required,Validators.minLength(8),Validators.maxLength(32)]],
   },
   {
     validators: this.Mustmatch('password','confirmpassword')
@@ -70,6 +74,7 @@ export class RegistrationComponent implements OnInit {
   //getcontrol function for input validation
     getControl(name:any): AbstractControl | null{
       return this.registrationForm.get(name);
+
     }
   // Success Massage modal after registration
   open_success_modal(){
@@ -81,11 +86,16 @@ export class RegistrationComponent implements OnInit {
   close_success_modal(){
     const modal = document.getElementById('myModal');
     if(modal!=null){
-      modal.style.display="";
+      modal.style.display="none";
     }
   }
   //oninit function
     ngOnInit(): void {
+      //fullname
+      const fullname_error_control = this.registrationForm.get('fullname');
+      fullname_error_control?.valueChanges.subscribe(username=>{
+        this.validate_username(username_error_control as FormControl);
+      })
       //username
       const username_error_control = this.registrationForm.get('username');
       username_error_control?.valueChanges.subscribe(username=>{
@@ -119,22 +129,38 @@ export class RegistrationComponent implements OnInit {
     }
   /*Condition for username,studentid,email,role,password,confirmpassword error msg */
 
-  //username
-    username_error_alert_msg:boolean | undefined;
-    validate_username(username_error_control:FormControl): void {
-      this.username_error_message = ' ';
-      this.username_error_alert_msg = false;
-      if (username_error_control.invalid && (username_error_control.touched || username_error_control.dirty)) {
-        this.username_error_alert_msg = true;
-        if(username_error_control.errors?.['required']){
-          this.username_error_message= 'Username is required';
-        };
-        if (username_error_control.errors?.['pattern']) {
-          this.username_error_message = "Username pattern is not valid "
-        };
+  //fullname
+    fullname_error_alert_msg:boolean | undefined;
+    validate_fullname(fullname_error_control:FormControl): void {
+      this.fullname_error_message = ' ';
+      this.fullname_error_alert_msg = false;
+      if (fullname_error_control.invalid && (fullname_error_control.touched || fullname_error_control.dirty)) {
+        this.fullname_error_alert_msg = true;
+        if(fullname_error_control.errors?.['required']){
+          this.fullname_error_message= 'Fullname is required';
+        }
+        if (fullname_error_control.errors?.['pattern']) {
+          this.fullname_error_message = "Fullname pattern is not valid "
+        }
       }
-
     }
+
+  //username
+  username_error_alert_msg:boolean | undefined;
+  validate_username(username_error_control:FormControl): void {
+    this.username_error_message = ' ';
+    this.username_error_alert_msg = false;
+    if (username_error_control.invalid && (username_error_control.touched || username_error_control.dirty)) {
+      this.username_error_alert_msg = true;
+      if(username_error_control.errors?.['required']){
+        this.username_error_message= 'Username is required';
+      }
+      if (username_error_control.errors?.['pattern']) {
+        this.username_error_message = "Username pattern is not valid "
+      }
+    }
+  }
+
   //studentid
     studentid_error_alert_msg:boolean | undefined;
     validate_studentid(studentid_error_control:FormControl): void {
@@ -242,4 +268,5 @@ export class RegistrationComponent implements OnInit {
   }
 
 
+  protected readonly faCircleCheck = faCircleCheck;
 }

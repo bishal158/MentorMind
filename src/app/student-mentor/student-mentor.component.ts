@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 import {
-  faBars, faBarsStaggered, faBlog, faEye,
-  faGear,
-  faPenToSquare, faReply, faReplyAll,
+  faBars, faBarsStaggered, faBlog, faEnvelope, faEye,
+  faGear, faHome,
+  faPenToSquare, faPhone, faReply, faReplyAll,
   faRightFromBracket,
-  faShareFromSquare, faSignOut,
+  faShareFromSquare, faSignOut, faSquareShareNodes,
   faUser
 } from "@fortawesome/free-solid-svg-icons";
+import {faFacebook, faGoogle, faInstagram, faLinkedin, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-student-mentor',
@@ -30,4 +31,13 @@ export class StudentMentorComponent {
   protected readonly faReply = faReply;
   protected readonly faReplyAll = faReplyAll;
   protected readonly faEye = faEye;
+  protected readonly faSquareShareNodes = faSquareShareNodes;
+  protected readonly faFacebook = faFacebook;
+  protected readonly faTwitter = faTwitter;
+  protected readonly faInstagram = faInstagram;
+  protected readonly faGoogle = faGoogle;
+  protected readonly faLinkedin = faLinkedin;
+  protected readonly faPhone = faPhone;
+  protected readonly faEnvelope = faEnvelope;
+  protected readonly faHome = faHome;
 }

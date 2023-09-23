@@ -4,11 +4,13 @@ import { LoginComponent } from './login/login.component'
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {StudentMentorInfoComponent} from "./student-mentor-info/student-mentor-info.component";
 const routes: Routes = [
-  {path:'home', component:HomeComponent},
+  {path:'', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'forget-password', component:ForgotPasswordComponent},
+  {path:'student-mentor-info', component:StudentMentorInfoComponent}
 
 ];
 @NgModule({

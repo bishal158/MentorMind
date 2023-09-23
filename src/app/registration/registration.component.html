@@ -18,7 +18,18 @@
       <!--Form Side-->
       <div class="col-md-6">
           <form class="col lg-3" (ngSubmit)=" registrationForm.status !=='INVALID' && registered()" [formGroup]="registrationForm">
-              <!--UserName-->
+            <!--Fullname-->
+            <label class="form-label" for="fullname">Fullname</label>
+            <div class="input-group mb-2">
+                  <span class="input-group-text bg-white " id="Fullname-icon">
+                    <fa-icon [icon]="faUser" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+                  </span>
+              <input type="text" class="form-control" placeholder="Ex:-'Mafuj Bishal' must be 8-20 character" id="fullname" name="fullname" formControlName="fullname" [ngClass]="{error: getControl('fullname')?.errors && getControl('fullname')?.touched}">
+            </div>
+            <!--Fullname error message-->
+            <alert type="danger" [dismissible]="true" *ngIf="fullname_error_alert_msg">{{fullname_error_message}}</alert>
+
+            <!--UserName-->
               <label class="form-label" for="username">Username</label>
               <div class="input-group mb-2">
                   <span class="input-group-text bg-white " id="Username-icon">
@@ -31,7 +42,7 @@
               <!--Student-Id-->
               <label class="form-label" for="studentid">Student Id</label>
               <div class="input-group mb-2">
-                  <span class="input-group-text bg-white "id="Student-Id-icon">
+                  <span class="input-group-text bg-white " id="Student-Id-icon">
                     <fa-icon [icon]="faIdCard" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
                   </span>
                   <input type="number" class="form-control" placeholder="Ex:-201002158" id="studentid" name="studentid" formControlName="studentid" [ngClass]="{error: getControl('studentid')?.errors && getControl('studentid')?.touched}">
@@ -41,7 +52,7 @@
               <!--Email-->
               <label class="form-label" for="email">Email</label>
               <div class="input-group mb-2">
-                  <span class="input-group-text bg-white "id="Email-icon">
+                  <span class="input-group-text bg-white " id="Email-icon">
                     <fa-icon [icon]="faEnvelope" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
                   </span>
                   <input type="email" class="form-control" placeholder="Ex:-abc@gmail.com" id="email" name="email" formControlName="email" [ngClass]="{error: getControl('email')?.errors && getControl('email')?.touched}">
@@ -51,10 +62,10 @@
               <!--Role-->
               <label class="form-label" for="role">Role</label>
               <div class="input-group mb-2">
-                  <span class="input-group-text bg-white "id="Role-icon">
-                    <fa-icon [icon]="faBriefcase" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+                  <span class="input-group-text bg-white " id="Role-icon">
+                    <fa-icon [icon]="faBriefcase" class="fa-flip fa-lg" style= "color: #8400c4;" ></fa-icon>
                   </span>
-                  <select class = "form-control" aria-placeholder="Select a Role" id="role" name="role" formControlName="role"  [ngClass]="{error: getControl('role')?.errors && getControl('role')?.touched}">
+                  <select class = "form-control"  id="role" name="role" formControlName="role"  [ngClass]="{error: getControl('role')?.errors && getControl('role')?.touched}">
                       <option>
                           Student
                       </option>
@@ -95,8 +106,7 @@
               </div>
               <!-- Confirmpassword error message -->
               <alert type="danger" [dismissible]="true" *ngIf="confirmpassword_error_alert_msg">{{confirmpassword_error_message}}</alert>
-              <alert type="danger" [dismissible]="true" *ngIf="registrationForm.errors?.['Mustmatch']">passss</alert>
-
+              <alert type="danger" [dismissible]="true" *ngIf="getControl('confirmpassword')?.errors && getControl('confirmpassword')?.errors?.['Mustmatch']">Mismatched Password </alert>
               <div class="col d-flex justify-content-center">
                   <button class=" login-button w-100 mb-3" type="submit" [disabled]="registrationForm.status === 'INVALID' " (click)="open_success_modal()" >Register</button>
               </div>
@@ -109,9 +119,8 @@
   </div>
 </div>
 <!--success message modal popup 1-->
-<div class="container d-flex justify-content-center align-items-center shadow rounded-3">
   <!-- The Modal -->
-  <div class="modal" id="myModal">
+  <div class="modal" id="myModal"  >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <!-- Modal Header -->
@@ -120,17 +129,16 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          <div class="thank-you-pop">
-            <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+          <div class="thank-you-pop ">
+            <fa-icon [icon]="faCircleCheck" class="fa-beat-fade"></fa-icon>
             <h1>Thank You!</h1>
             <p>Successfully Registered.....</p>
           </div>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-success"  (click)="close_success_modal()">Success</button>
+          <button type="button"  (click)="close_success_modal()">OK!!!</button>
         </div>
     </div>
   </div>
-</div>
 </div>

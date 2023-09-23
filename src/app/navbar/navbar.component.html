@@ -3,9 +3,7 @@
         <a class="navbar-brand justify-content-center align-items-center" routerLink="/home">
             <span class = "logo-left"><b>MENTOR</b></span><span class = "logo-right"><b>MIND</b></span>
         </a>
-        <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed" data-bs-target="#navbarNav" aria-controls="navbarNav" [ariaExpanded]="!isCollapsed" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color: black; background-color: black;"></span>
-        </button>
+        <fa-icon [icon]="faBarsStaggered" class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed" data-bs-target="#navbarNav" aria-controls="navbarNav" [ariaExpanded]="!isCollapsed" ></fa-icon>
         <div class="collapse navbar-collapse  justify-content-center align-items-center" id="navbarNav" [ngbCollapse]="isCollapsed" >
             <ul class="navbar-nav">
                 <li class="nav-item  p-2">
@@ -15,7 +13,7 @@
                     <a class="fs-6 fw-bold nav-text" routerLink="/home/competitive-programming">Competitive-Programming</a>
                 </li>
                 <li class="nav-item">
-                    <a routerLink="/login"  class="d-flex justify-content-center align-items-center  text-center rounded-3 p-2  fs-6 fw-bold button">Login/Register</a>
+                    <a routerLink="/login"  class="d-flex justify-content-center align-items-center  text-center rounded-2 p-2  fs-6  button">Login/Register</a>
                 </li>
             </ul>
         </div>

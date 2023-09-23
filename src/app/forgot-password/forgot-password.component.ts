@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
-import { faFacebook, faGoogle, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faKey, faEnvelope, faEyeSlash, faEye, faUser, faIdCard, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import {faKey, faEnvelope, faEyeSlash, faEye, faUser, faCircleCheck,} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-forgot-password',
@@ -14,13 +13,8 @@ export class ForgotPasswordComponent implements OnInit {
       faEnvelope = faEnvelope;
       faEyeSlash = faEyeSlash;
       faEye = faEye;
-      faFacebook = faFacebook;
-      faGoogle = faGoogle;
-      faGithub = faGithub;
-      faLinkedin = faLinkedin;
       faUser = faUser;
-      faIdCard = faIdCard;
-      faBriefcase = faBriefcase;
+      faCircleCheck = faCircleCheck;
     // error message variables
     username_error_message: string | undefined;
     email_error_message: string | undefined;
@@ -49,35 +43,39 @@ export class ForgotPasswordComponent implements OnInit {
     email_regex = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
     username_regex = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
     //RegisterForm builder
-    registrationForm:FormGroup = this.formbuilder.group({
+    forgotpasswordform:FormGroup = this.formbuilder.group({
       username: ['',[Validators.required,Validators.pattern(this.username_regex)]],
       email:['',[Validators.required,Validators.email,Validators.pattern(this.email_regex)]],
       password:['',[Validators.required,Validators.maxLength(32),Validators.minLength(8)]],
       confirmpassword:['',[Validators.required,Validators.minLength(8),Validators.maxLength(32)]],
-    });
+    },
+      {
+        validators: this.Mustmatch('password','confirmpassword')
+      }
+    );
     //getcontrol function for input validation
       getControl(name:any): AbstractControl | null{
-        return this.registrationForm.get(name);
+        return this.forgotpasswordform.get(name);
       }
     //oninit function
       ngOnInit(): void {
         //username
-        const username_error_control = this.registrationForm.get('username');
+        const username_error_control = this.forgotpasswordform.get('username');
         username_error_control?.valueChanges.subscribe(username=>{
           this.validate_username(username_error_control as FormControl);
         })
         //email
-        const email_error_control = this.registrationForm.get('email');
+        const email_error_control = this.forgotpasswordform.get('email');
         email_error_control?.valueChanges.subscribe(email=>{
           this.validate_email(email_error_control as FormControl);
         })
         //password
-        const password_error_control = this.registrationForm.get('password');
+        const password_error_control = this.forgotpasswordform.get('password');
         password_error_control?.valueChanges.subscribe(password=>{
           this.validate_password(password_error_control as FormControl);
         })
         //confirmpassword
-        const confirmpassword_error_control = this.registrationForm.get('confirmpassword');
+        const confirmpassword_error_control = this.forgotpasswordform.get('confirmpassword');
         confirmpassword_error_control?.valueChanges.subscribe(confirmpassword=>{
           this.validate_confirmpassword(confirmpassword_error_control as FormControl);
         })
@@ -93,10 +91,10 @@ export class ForgotPasswordComponent implements OnInit {
           this.username_error_alert_msg = true;
           if(username_error_control.errors?.['required']){
             this.username_error_message= 'Username is required';
-          };
+          }
           if (username_error_control.errors?.['pattern']) {
             this.username_error_message = "Username pattern is not valid "
-          };
+          }
         }
 
       }
@@ -151,8 +149,38 @@ export class ForgotPasswordComponent implements OnInit {
         }
       }
     }
-    registered(){
-      console.log(this.registrationForm.value,this.registrationForm.invalid);
-      this.registrationForm.reset();
+  Mustmatch(password: string, confirmpassword: string) {
+    return(formgroup:FormGroup)=>{
+      const passwordcontrol = formgroup.controls?.[password];
+      const confirmpasswordcontrol = formgroup.controls?.[confirmpassword];
+      if (confirmpasswordcontrol.errors && !confirmpasswordcontrol.errors?.['Mustmatch']) {
+        return ;
+      }
+      if(passwordcontrol.value !== confirmpasswordcontrol.value) {
+        confirmpasswordcontrol.setErrors({Mustmatch:true});
+      }
+      else{
+        confirmpasswordcontrol.setErrors(null);
+      }
     }
+  }
+    registered(){
+      console.log(this.forgotpasswordform.value,this.forgotpasswordform.invalid);
+      this.forgotpasswordform.reset();
+    }
+
+
+
+  open_success_modal(){
+    const modal = document.getElementById('myModal');
+    if(modal!=null){
+      modal.style.display="block";
+    }
+  }
+  close_success_modal(){
+    const modal = document.getElementById('myModal');
+    if(modal!=null){
+      modal.style.display="none";
+    }
+  }
 }

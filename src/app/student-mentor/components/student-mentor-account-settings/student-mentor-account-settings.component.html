@@ -1,6 +1,4 @@
-<div class="container-fluid mb-1" style= "border: 1px solid white; background-color: #000;">
-  <h1 class="text-center text-light" >Account Settings</h1>
-</div>
+
 <div class="container-fluid d-flex">
   <div class="row">
     <div class="col-md-12">
@@ -11,9 +9,23 @@
               <fa-icon [icon]="faPen" class="fa-sm mx-1"></fa-icon><span>Update Information</span>
             </div>
           </ng-template>
-          <ng-template >
-
+          <app-update-account-information></app-update-account-information>
+        </tab>
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faSchool" class="fa-sm mx-1"></fa-icon><span>Educational Qualification</span>
+            </div>
           </ng-template>
+          <app-add-educational-qualification></app-add-educational-qualification>
+        </tab>
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faNoteSticky" class="fa-sm mx-1"></fa-icon><span>Add Publications</span>
+            </div>
+          </ng-template>
+          <app-add-thesis-project></app-add-thesis-project>
         </tab>
         <tab class="mt-2 text-dark">
           <ng-template tabHeading>
@@ -21,10 +33,25 @@
               <fa-icon [icon]="faKey" class="fa-sm mx-1"></fa-icon><span>Change Password</span>
             </div>
           </ng-template>
-
+          <app-change-password></app-change-password>
+        </tab>
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faHashtag" class="fa-sm mx-1"></fa-icon><span>Skills and Social-Links</span>
+            </div>
+          </ng-template>
+          <app-add-skills-and-sociallinks></app-add-skills-and-sociallinks>
+        </tab>
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faCircleInfo" class="fa-sm mx-1"></fa-icon><span>About</span>
+            </div>
+          </ng-template>
+          <app-about-form></app-about-form>
         </tab>
       </tabset>
-
     </div>
   </div>
 </div>

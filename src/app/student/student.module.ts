@@ -6,6 +6,10 @@ import { StudentComponent } from './student.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+import { WatchBlogsComponent } from './components/watch-blogs/watch-blogs.component';
+import { DownloadResourcesComponent } from './components/download-resources/download-resources.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AllMentorsComponent } from './components/all-mentors/all-mentors.component';
 
 
 
@@ -14,6 +18,9 @@ import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     StudentAboutComponent,
     StudentComponent,
+    WatchBlogsComponent,
+    DownloadResourcesComponent,
+    AllMentorsComponent,
 
   ],
   imports: [
@@ -22,6 +29,8 @@ import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     CollapseModule,
     NgbCollapse,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class StudentModule { }

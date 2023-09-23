@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faKey, faEnvelope, faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons';
 import {faFacebook, faGithub, faGoogle, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import {} from '@fortawesome/free-regular-svg-icons';
 import { FormGroup,FormControl, Validators,FormBuilder, AbstractControl } from '@angular/forms';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit{
     this.changetype = !this.changetype;
   }
   //constructor for formbuilder
-  constructor(private formbuilder:FormBuilder){}
+  constructor(private formbuilder:FormBuilder,private router:Router){}
   //loginform control
   //email ReGex for email validation
   email_regex = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
@@ -65,15 +65,15 @@ export class LoginComponent implements OnInit{
       this.email_error_alert_msg=true;
       if (email_error_control.errors?.['required']) {
         this.email_error_message = 'Email is required';
-      };
+      }
       if (email_error_control.errors?.['email']) {
         this.email_error_message = 'Email is not valid';
-      };
+      }
       if(email_error_control.errors?.['pattern']){
         this.email_error_message = 'Email pattern is not valid';
       }
 
-    };
+    }
   };
   //condition for password error msg
   password_error_alert_msg:boolean | undefined;
@@ -84,19 +84,20 @@ export class LoginComponent implements OnInit{
       this.password_error_alert_msg=true;
       if (password_error_control.errors?.['required']) {
         this.password_error_message = 'Password is required';
-      };
+      }
       if (password_error_control.errors?.['minlength']) {
         this.password_error_message = 'Password must be at least 8 characters';
-      };
+      }
       if (password_error_control.errors?.['maxlength']) {
         this.password_error_message = 'Password must be at most 32 characters';
-      };
-    };
-  };
+      }
+    }
+  }
   logged_in(){
 
     console.log(this.loginForm.value,this.loginForm.invalid,this.email_error_message);
     this.loginForm.reset();
+
   }
 
 

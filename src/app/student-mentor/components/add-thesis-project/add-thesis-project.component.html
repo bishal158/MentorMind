@@ -1,0 +1,75 @@
+<div class="main-container d-flex  justify-content-center align-items-center mt-4">
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side">
+      <!--Logo Div-->
+      <div class="logo mb-6 p-3">
+        <img src="/assets/images/Publication.svg" alt="Register" class="img-fluid" style="max-width: 250px; height: 300px;" >
+      </div>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3 class="text-center text-light rounded-1 mb-2 p-2" style="background-color: #8400c4;">Add Your Publications</h3>
+      <form class="col lg-3" (ngSubmit)="publications_form.status !=='INVALID' && add()" [formGroup]="publications_form">
+        <!--Project or Thesis-->
+        <label class="form-label" for="project_or_thesis">Project or Thesis</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Project_or_Thesis_icon">
+            <fa-icon [icon]="faFileSignature" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <select class="form-select" id="project_or_thesis" name="project_or_thesis" formControlName="project_or_thesis" [ngClass]="{error: getControl('project_or_thesis')?.errors && getControl('project_or_thesis')?.touched}">
+            <option [defaultSelected]="true">Choose one</option>
+            <option value="Project">Project</option>
+            <option value="Thesis">Thesis</option>
+          </select>
+        </div>
+        <!--Project_or_Thesis error message-->
+        <alert type="danger" [dismissible]="true" *ngIf="project_or_thesis_error_alert_msg">{{project_or_thesis_error_message}}</alert>
+
+        <!--Title-->
+        <label class="form-label" for="title">Title</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Programme_name-icon">
+            <fa-icon [icon]="faUserTag" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input type="text" class="form-control" placeholder="Title Here" id="title" name="title" formControlName="title" [ngClass]="{error: getControl('title')?.errors && getControl('title')?.touched}">
+        </div>
+        <!--Title error message-->
+        <alert type="danger" [dismissible]="true" *ngIf="title_error_alert_msg">{{title_error_message}}</alert>
+        <!--Publication Link-->
+        <label class="form-label" for="publication_link">Publication link</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Publication_link_icon">
+            <fa-icon [icon]="faLink" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input type="url" class="form-control" placeholder="Add a link of your publication" id="publication_link" name="publication_link" formControlName="publication_link" [ngClass]="{error: getControl('publication_link')?.errors && getControl('publication_link')?.touched}"/>
+        </div>
+        <!--Publication Link error message-->
+        <alert type="danger" [dismissible]="true" *ngIf="publication_link_error_alert_msg">{{publication_link_error_message}}</alert>
+
+        <!--Date of Publication-->
+        <label class="form-label" for="date_of_publication">Date of Publication</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Date-icon">
+            <fa-icon [icon]="faCalendarDays"  class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input type="date" class="form-control"  name="date_of_publication" id="date_of_publication" formControlName="date_of_publication" [ngClass]="{error: getControl('date_of_publication')?.errors && getControl('date_of_publication')?.touched}" />
+        </div>
+        <!--Date of Publication error message-->
+        <alert type="danger" [dismissible]="true" *ngIf="date_of_publication_error_alert_msg">{{date_of_publication_error_message}}</alert>
+        <!--Description-->
+        <label class="form-label" for="publication_description">Publication Description</label>
+        <div class="input-group mb-1">
+          <textarea type="text"  placeholder="Write Your Message Here" class="form-control"  rows="5" cols="5" name="publication_description" id="publication_description" formControlName="publication_description" [ngClass]="{error: getControl('publication_description')?.errors && getControl('publication_description')?.touched}"></textarea>
+        </div>
+        <p id="description_counter"></p>
+        <!--Description error message-->
+        <alert type="danger" [dismissible]="true" *ngIf="publication_description_error_alert_msg">{{publication_description_error_message}}</alert>
+        <!-- Submit button -->
+        <div class="col d-flex justify-content-start">
+          <button class=" login-button w-100 mb-3" type="submit" [disabled]="publications_form.status === 'INVALID' ">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -28,45 +28,50 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import {StudentMentorModule} from "./student-mentor/student-mentor.module";
 import { StudentModule } from './student/student.module';
+import { StudentMentorInfoComponent } from './student-mentor-info/student-mentor-info.component';
 
 
 //swiper js library
 register();
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistrationComponent,
-    HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    FrequentAskQuestionComponent,
-    CounterComponent,
-    ContactUsComponent,
-    TopMentorComponent,
-    BannerComponent,
-    ForgotPasswordComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    RouterModule,
-    NgbModule,
-    CarouselModule.forRoot(),
-    AlertModule.forRoot(),
-    TabsModule.forRoot(),
-    RatingModule.forRoot(),
-    FormsModule,
-    BsDropdownModule.forRoot(),
-    CollapseModule.forRoot(),
-    StudentMentorModule,
-    StudentModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegistrationComponent,
+        HomeComponent,
+        NavbarComponent,
+        FooterComponent,
+        FrequentAskQuestionComponent,
+        CounterComponent,
+        ContactUsComponent,
+        TopMentorComponent,
+        BannerComponent,
+        ForgotPasswordComponent,
+        StudentMentorInfoComponent,
+    ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+        RouterModule,
+        NgbModule,
+        CarouselModule.forRoot(),
+        AlertModule.forRoot(),
+        TabsModule.forRoot(),
+        RatingModule.forRoot(),
+        FormsModule,
+        BsDropdownModule.forRoot(),
+        CollapseModule.forRoot(),
+        StudentMentorModule,
+        StudentModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+    exports: [
+        FooterComponent
+    ]
 })
 export class AppModule { }
