@@ -133,7 +133,14 @@
   animation: swing-in-left-fwd 0.9s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
-
+.header{
+  margin-top: 25px;
+  height: 60px;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #3b5998;
+}
 .blogs{
   border: 1px solid rgb(86, 111, 178);
 }
