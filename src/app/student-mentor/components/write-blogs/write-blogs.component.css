@@ -1,0 +1,95 @@
+/*heading style*/
+.header{
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #566fb2;
+}
+.header div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.header div:first-of-type {
+  animation: showup 7s infinite;
+}
+.header div:last-of-type {
+  width:0;
+  animation: reveal 7s infinite;
+}
+.header div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+@keyframes showup {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0;}
+}
+@keyframes slidein {
+  0% { margin-left:-800px; }
+  20% { margin-left:-800px; }
+  35% { margin-left:0; }
+  100% { margin-left:0; }
+}
+@keyframes reveal {
+  0% {opacity:0;width:0;}
+  20% {opacity:1;width:0;}
+  30% {width:355px;}
+  80% {opacity:1;}
+  100% {opacity:0;width:355px;}
+}
+.header p{
+  font-size:12px;
+  color:#999;
+}
+editor{
+  width: 100%;
+  height: 100%;
+}
+
+.error{
+  border: 1px solid red;
+}
+
+.image{
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+.login-button{
+  background-color: #8400c4;
+  border: 1px solid #8400c4;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.login-button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .login-button {
+    padding: 10px 30px;
+  }
+}

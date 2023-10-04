@@ -1,24 +1,40 @@
 import { Component } from '@angular/core';
 
 import {
-  faBars, faBarsStaggered, faBlog, faEnvelope, faEye,
-  faGear, faHome,
-  faPenToSquare, faPhone, faReply, faReplyAll,
+  faBars,
+  faBarsStaggered,
+  faBlog,
+  faEnvelope,
+  faEye,
+  faGear,
+  faHome,
+  faPenToSquare,
+  faPhone,
+  faReply,
+  faReplyAll,
   faRightFromBracket,
-  faShareFromSquare, faSignOut, faSquareShareNodes,
-  faUser
-} from "@fortawesome/free-solid-svg-icons";
-import {faFacebook, faGoogle, faInstagram, faLinkedin, faTwitter} from "@fortawesome/free-brands-svg-icons";
+  faShareFromSquare,
+  faSignOut,
+  faSquareShareNodes,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook,
+  faGoogle,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-student-mentor',
   templateUrl: './student-mentor.component.html',
   styleUrls: ['./student-mentor.component.css'],
-
 })
 export class StudentMentorComponent {
-  isCollapsed =false;
-  open_inner_item =true;
+  isCollapsed = false;
+  open_inner_item = true;
+
   protected readonly faBars = faBars;
   protected readonly faShareFromSquare = faShareFromSquare;
   protected readonly faGear = faGear;
@@ -40,4 +56,5 @@ export class StudentMentorComponent {
   protected readonly faPhone = faPhone;
   protected readonly faEnvelope = faEnvelope;
   protected readonly faHome = faHome;
+  protected readonly Animation = Animation;
 }

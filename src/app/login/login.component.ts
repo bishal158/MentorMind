@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { faKey, faEnvelope, faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook, faGithub, faGoogle, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import { FormGroup,FormControl, Validators,FormBuilder, AbstractControl } from '@angular/forms';
-import {Router} from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
+import {
+  faEnvelope,
+  faEye,
+  faEyeSlash,
+  faKey,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook,
+  faGithub,
+  faGoogle,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
-
+export class LoginComponent implements OnInit {
   // Font Awesome Icon variable
   fakey = faKey;
   faEnvelope = faEnvelope;
@@ -23,65 +40,91 @@ export class LoginComponent implements OnInit{
   email_error_message: string | undefined;
   password_error_message: string | undefined;
   //password visiable logic
-  visiable:boolean = true;
-  changetype:boolean = true;
-  view(){
+  visiable: boolean = true;
+  changetype: boolean = true;
+  //email ReGex for email validation
+  email_regex =
+    /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
+  //loginform builder
+  loginForm: FormGroup = this.formbuilder.group({
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.email,
+        Validators.pattern(this.email_regex),
+      ],
+    ],
+    password: [
+      '',
+      [Validators.required, Validators.maxLength(32), Validators.minLength(8)],
+    ],
+  });
+
+  //loginform control
+  //condition for email error msg
+  email_error_alert_msg: boolean | undefined;
+  //condition for password error msg
+  password_error_alert_msg: boolean | undefined;
+
+  //constructor for formbuilder
+  constructor(
+    private formbuilder: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService,
+  ) {}
+
+  view() {
     this.visiable = !this.visiable;
     this.changetype = !this.changetype;
   }
-  //constructor for formbuilder
-  constructor(private formbuilder:FormBuilder,private router:Router){}
-  //loginform control
-  //email ReGex for email validation
-  email_regex = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
-  //loginform builder
-  loginForm:FormGroup = this.formbuilder.group({
-    email:['',[Validators.required,Validators.email,Validators.pattern(this.email_regex)]],
-    password:['',[Validators.required,Validators.maxLength(32),Validators.minLength(8)]]
-  });
-  getControl(name:any): AbstractControl | null{
+
+  getControl(name: any): AbstractControl | null {
     return this.loginForm.get(name);
   }
+
   // oninit function
   ngOnInit(): void {
     // email error
     const email_error_control = this.loginForm.get('email');
-    email_error_control?.valueChanges.subscribe(email=>{
+    email_error_control?.valueChanges.subscribe((email) => {
       this.validate_email(email_error_control as FormControl);
     });
     // password error
     const password_error_control = this.loginForm.get('password');
-    password_error_control?.valueChanges.subscribe(password=>{
+    password_error_control?.valueChanges.subscribe((password) => {
       this.validate_password(password_error_control as FormControl);
     });
-  };
+  }
 
-  //condition for email error msg
-  email_error_alert_msg:boolean | undefined;
-  validate_email(email_error_control:FormControl):void{
-    this.email_error_message=' ';
-    this.email_error_alert_msg= false;
-    if (email_error_control.invalid && (email_error_control.touched||email_error_control.dirty)) {
-      this.email_error_alert_msg=true;
+  validate_email(email_error_control: FormControl): void {
+    this.email_error_message = ' ';
+    this.email_error_alert_msg = false;
+    if (
+      email_error_control.invalid &&
+      (email_error_control.touched || email_error_control.dirty)
+    ) {
+      this.email_error_alert_msg = true;
       if (email_error_control.errors?.['required']) {
         this.email_error_message = 'Email is required';
       }
       if (email_error_control.errors?.['email']) {
         this.email_error_message = 'Email is not valid';
       }
-      if(email_error_control.errors?.['pattern']){
+      if (email_error_control.errors?.['pattern']) {
         this.email_error_message = 'Email pattern is not valid';
       }
-
     }
-  };
-  //condition for password error msg
-  password_error_alert_msg:boolean | undefined;
-  validate_password(password_error_control:FormControl):void{
-    this.password_error_message=' ';
-    this.password_error_alert_msg= false;
-    if (password_error_control.invalid && (password_error_control.touched|| password_error_control.dirty)) {
-      this.password_error_alert_msg=true;
+  }
+
+  validate_password(password_error_control: FormControl): void {
+    this.password_error_message = ' ';
+    this.password_error_alert_msg = false;
+    if (
+      password_error_control.invalid &&
+      (password_error_control.touched || password_error_control.dirty)
+    ) {
+      this.password_error_alert_msg = true;
       if (password_error_control.errors?.['required']) {
         this.password_error_message = 'Password is required';
       }
@@ -93,12 +136,23 @@ export class LoginComponent implements OnInit{
       }
     }
   }
-  logged_in(){
 
-    console.log(this.loginForm.value,this.loginForm.invalid,this.email_error_message);
-    this.loginForm.reset();
-
+  showSuccess() {
+    this.toastr.success('Successfully Logged in!!! ', 'Toastr fun!', {
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      titleClass: 'toast-title',
+    });
   }
 
+  logged_in() {
+    this.loginForm.reset();
 
+    // console.log(
+    //   this.loginForm.value,
+    //   this.loginForm.invalid,
+    //   this.email_error_message,
+    // );
+    this.router.navigate(['/student']).then((r) => this.showSuccess());
+  }
 }

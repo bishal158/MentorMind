@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { StudentMentorAboutComponent } from './components/student-mentor-about/student-mentor-about.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -24,6 +24,7 @@ import { AllYourBlogsComponent } from './components/all-your-blogs/all-your-blog
 import { WatchOthersBlogsComponent } from './components/watch-others-blogs/watch-others-blogs.component';
 import { ShareResourcesFormComponent } from './components/share-resources-form/share-resources-form.component';
 import { ShowFullBlogComponent } from './components/show-full-blog/show-full-blog.component';
+import { EditorComponent } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -41,24 +42,23 @@ import { ShowFullBlogComponent } from './components/show-full-blog/show-full-blo
     WatchOthersBlogsComponent,
     ShareResourcesFormComponent,
     ShowFullBlogComponent,
-
   ],
-    imports: [
-        CommonModule,
-        NgbModule,
-        FontAwesomeModule,
-        CarouselModule,
-        CollapseModule,
-        TabsModule,
-        RatingModule,
-        AlertModule,
-        FormsModule,
-        BsDropdownModule,
-        ReactiveFormsModule,
-        StudentMentorRoutingModule,
-        NgOptimizedImage,
-
-    ],
+  imports: [
+    CommonModule,
+    NgbModule,
+    FontAwesomeModule,
+    CarouselModule,
+    CollapseModule,
+    TabsModule,
+    RatingModule,
+    AlertModule,
+    FormsModule,
+    BsDropdownModule,
+    ReactiveFormsModule,
+    StudentMentorRoutingModule,
+    NgOptimizedImage,
+    EditorComponent,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StudentMentorModule {}

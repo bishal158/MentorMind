@@ -10,6 +10,10 @@ import { WatchBlogsComponent } from './components/watch-blogs/watch-blogs.compon
 import { DownloadResourcesComponent } from './components/download-resources/download-resources.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllMentorsComponent } from './components/all-mentors/all-mentors.component';
+import { MyMentorsComponent } from './components/my-mentors/my-mentors.component';
+import { MentorAboutComponent } from './components/mentor-about/mentor-about.component';
+import {RatingModule} from "ngx-bootstrap/rating";
+import {TabsModule} from "ngx-bootstrap/tabs";
 
 
 
@@ -21,16 +25,20 @@ import { AllMentorsComponent } from './components/all-mentors/all-mentors.compon
     WatchBlogsComponent,
     DownloadResourcesComponent,
     AllMentorsComponent,
+    MyMentorsComponent,
+    MentorAboutComponent,
 
   ],
-  imports: [
-    CommonModule,
-    StudentRoutingModule,
-    FontAwesomeModule,
-    CollapseModule,
-    NgbCollapse,
-    FormsModule,
-    ReactiveFormsModule,
-  ]
+    imports: [
+        CommonModule,
+        StudentRoutingModule,
+        FontAwesomeModule,
+        CollapseModule,
+        NgbCollapse,
+        FormsModule,
+        ReactiveFormsModule,
+        RatingModule,
+        TabsModule,
+    ]
 })
 export class StudentModule { }

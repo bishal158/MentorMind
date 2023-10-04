@@ -36,13 +36,53 @@
   -webkit-animation: swing-in-left-fwd 0.9s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   animation: swing-in-left-fwd 0.9s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
-
-
-.blogs{
-  border: 1px solid rgb(86, 111, 178);
+/*heading style*/
+.header{
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #566fb2;
 }
-.blogs:hover{
-  box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 4px;
+.header div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.header div:first-of-type {
+  animation: showup 7s infinite;
+}
+.header div:last-of-type {
+  width:0;
+  animation: reveal 7s infinite;
+}
+.header div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+@keyframes showup {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0;}
+}
+@keyframes slidein {
+  0% { margin-left:-800px; }
+  20% { margin-left:-800px; }
+  35% { margin-left:0; }
+  100% { margin-left:0; }
+}
+@keyframes reveal {
+  0% {opacity:0;width:0;}
+  20% {opacity:1;width:0;}
+  30% {width:355px;}
+  80% {opacity:1;}
+  100% {opacity:0;width:355px;}
+}
+.header p{
+  font-size:12px;
+  color:#999;
 }
 .bar{
   display: inline-block;
@@ -119,7 +159,7 @@
     opacity: 0;
   }
 }
-button{
+.download{
   margin-right:10px;
   padding: 5px;
   background-color: #8e0bd4;
@@ -129,10 +169,30 @@ button{
   margin-bottom: 10px;
   width: 170px;
 }
-button a{
+.download a{
   text-decoration: none;
   color: white;
 }
-button span{
-  color: #ffffff;
+.size{
+  margin-right:10px;
+  padding: 5px;
+  background-color: #df6363;
+  border: 1px solid white;
+  height:40px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 170px;
+  color: white;
+}
+.size span{
+  color: white;
+}
+.blogs{
+  border: 1px solid rgb(86, 111, 178);
+  box-shadow: 0 1px 2px rgb(255, 255, 255)
+}
+.blogs:hover{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transition: all 0.4s ease-in-out;
+  translate: scale(1.2,1.2);
 }

@@ -1,219 +1,433 @@
-<div class="container-fluid" style= "border: 1px solid white; background-color: #000;">
-  <h1 class="text-center text-light" >Detail Information</h1>
-</div>
-<div class="container-fluid  mt-2 shadow p-3 main-display">
-  <div class="row gap-0">
-    <div class="col-md-2">
-      <div class="row">
-        <div class="col-md-12 mentor-image">
-          <img src="/assets/images/top-mentors/mentor5.png" alt="" class="img-fluid w-100 justify-content-center">
-          <span type="button"><fa-icon [icon]="faImage" class="mx-1"></fa-icon>Update Image</span>
-        </div>
-        <div class="col-md-12 mt-5">
-          <div class="social-links">
-            <h4 class="text-center p-2 text-light">Social Links</h4>
-            <ul class="list-group p-2">
-              <li class="list-group-item list-group-item-action mb-2">
-                <a routerLink="#"><fa-icon [icon]="faFacebook"></fa-icon>Facebook</a>
-              </li>
-              <li class="list-group-item list-group-item-action mb-2">
-                <a routerLink="#"><fa-icon [icon]="faTwitter"></fa-icon>Twitter</a>
-              </li>
-              <li class="list-group-item list-group-item-action mb-2">
-                <a routerLink="#"><fa-icon [icon]="faLinkedin"></fa-icon>LinkedIn</a>
-              </li>
-              <li class="list-group-item list-group-item-action mb-2">
-                <a routerLink="#"><fa-icon [icon]="faGithub"></fa-icon>Github</a>
-              </li>
-            </ul>
-            </div>
-            <div class="skills">
-              <h4 class="text-center p-2 align-items-center text-light" >Skills</h4>
-              <ul class="list-group p-2">
-                <li class="list-group-item list-group-item-action mb-2">
-                  MERN STACK DEVELOPER
-                </li>
-                <li class="list-group-item list-group-item-action mb-2">
-                  MERN STACK DEVELOPER
-                </li>
-                <li class="list-group-item list-group-item-action mb-2">
-                  MERN STACK DEVELOPER
-                </li>
-                <li class="list-group-item list-group-item-action mb-2">
-                  MERN STACK DEVELOPER
-                </li>
-              </ul>
-          </div>
-        </div>
-      </div>
+<!--Your Profile-->
+<h4 class="heading">Your Profile</h4>
+<div class="card" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-2 mentor-image">
+      <img
+        alt=""
+        class=""
+        src="assets/images/top-mentors/mentor1.png"
+        style="height: 100%; width: 100%"
+      />
     </div>
-    <div class="col-md-10 ">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-12">
-          <h3 class="text-start">Mafuj Ahmed Bishal</h3>
-          <h4 class="text-start">Computer Science and Engineering</h4>
-          <h6 class="text-start">Email: afnanmafuj22@gmail.com</h6>
-          <h6 class="text-start">Contact No: 01798541625</h6>
-          <div class="rating text-start mb-3 fs-3">
-            Your Rating :<rating class="text-start" [(ngModel)]="rate" [max]="max" [readonly]="isReadonly" (keyup)="confirmSelection($event)"></rating>
-          </div>
-        </div>
-        <div class="col-md-12">
-            <tabset>
-              <!--Educational Qualification Table-->
-              <tab heading="Educational Qualification">
-                <table class="table table-bordered" style="cursor: pointer">
-                  <thead>
-                    <tr>
-                      <th scope="col">Serial no</th>
-                      <th scope="col">Institution Name</th>
-                      <th scope="col">Programme Name</th>
-                      <th scope="col">Result</th>
-                      <th scope="col">Group/Department</th>
-                      <th scope="col">Passing Year</th>
-                      <th scope="col">Operations</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Green University of Bangladesh</td>
-                      <td>Bsc</td>
-                      <td>khub Bhalo na</td>
-                      <td>Computer Science and Engineering</td>
-                      <td>2024</td>
-                      <td class="d-flex justify-content-center align-items-center operation-icon">
-                        <span type="button" (click)="open_update_educational_qualification_modal()">
-                          <fa-icon [icon]="faPenToSquare" style="color: #03A9F4"></fa-icon>
-                        </span>
-                        <span type="button">
-                          <fa-icon [icon]="faTrash" style="color: red"></fa-icon>
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </tab>
-              <!--Thesis and Projects Table-->
-              <tab heading="Thesis and Projects">
-                <table class="table table-bordered" style="cursor: pointer">
-                  <thead>
-                    <tr>
-                      <th scope="col">Serial no</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Publication Link</th>
-                      <th scope="col">Date of Publication</th>
-                      <th scope="col">Publication Description</th>
-                      <th scope="col">Operations</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Project</td>
-                      <td>Mentor Mind</td>
-                      <td>
-                        <a class="text-decoration-none" href="http://localhost:4200/">Mentor Mind</a>
-                      </td>
-                      <td>20 March,2023</td>
-                      <td>vel aliquot consul fugit magna dictum placer libero facilis very etime signifiers fabulous dolor homero common lorem rises ult-rices done</td>
-                      <td class="d-flex justify-content-center align-items-center operation-icon">
-                        <span type="button" (click)="open_update_publication_modal()">
-                          <fa-icon [icon]="faPenToSquare" style="color: #03A9F4"></fa-icon>
-                        </span>
-                        <span type="button">
-                          <fa-icon [icon]="faTrash" style="color: red"></fa-icon>
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </tab>
-              <!--About-->
-              <tab heading="About" >
-
-              </tab>
-            </tabset>
-        </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h4 class="card-title bar">Mafuj Ahmed Bishal</h4>
+        <h5 class="card-subtitle mt-2">Database Management System</h5>
+        <p class="card-title mt-2">
+          <strong>
+            <fa-icon [icon]="faEnvelope" style="color: teal"></fa-icon>
+          </strong>
+          afnanmafuj22@gmail.com
+        </p>
+        <p class="card-title mt-2">
+          <strong>
+            <fa-icon [icon]="faMobile" style="color: #3b5998"></fa-icon>
+          </strong>
+          01798541625
+        </p>
+        <h6 class="rating text-start">
+          Your Rating :
+          <rating
+            [(ngModel)]="rate"
+            [max]="max"
+            [ngClass]="{very_poor: rate>=0 && rate <= 2 , poor: rate>2 && rate <= 4 , fair: rate > 4 && rate <= 6 , good: rate > 6 && rate <= 8, excellent: rate > 8 && rate <= 10 }"
+            [readonly]="isReadonly"
+            class="text-start"
+          ></rating>
+        </h6>
+        <p class="card-text mt-2">
+          <strong>About:</strong> This is a wider card with supporting text
+          below as a natural lead-in to additional content. This content is a
+          little bit longerThis is a wider card with supporting text below as a
+          natural lead-in to additional content.
+        </p>
       </div>
     </div>
   </div>
 </div>
+<!--Your Skills and Social Links-->
+<h4 class="heading">Skills and Social Links</h4>
+<div class="card" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-6 social-links">
+      <ul class="list-group p-2">
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faFacebook"></fa-icon>
+            Facebook
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faTwitter"></fa-icon>
+            Twitter
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faGithub"></fa-icon>
+            GitHub
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            Twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 skills">
+      <ul class="list-group p-2">
+        <li class="list-group-item list-group-item-action mb-2">
+          MERN STACK DEVELOPER
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          MERN STACK DEVELOPER
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          MERN STACK DEVELOPER
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          MERN STACK DEVELOPER
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--Your Qualification and Publications-->
+<h4 class="heading">Qualification and Publications</h4>
+<div class="container-fluid" style="width: 100%">
+  <div class="row">
+    <div class="col-md-12">
+      <tabset>
+        <!--Educational Qualification-->
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faSchool" class="fa-sm mx-1"></fa-icon>
+              <span>Educational Qualification</span>
+            </div>
+          </ng-template>
+          <div class="card mb-2" style="width: 100%">
+            <div class="row">
+              <div class="col-md-2 p-4">
+                <img
+                  alt=""
+                  class=""
+                  src="assets/images/qualification.svg"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #8400c4">
+                    Mukul Niketon High School
+                  </h4>
+                  <h5 class="card-subtitle mt-2">
+                    Secondary School Certificate
+                  </h5>
+                  <p class="card-title mt-2">
+                    <strong> Result: </strong>
+                    4.95
+                  </p>
+                  <p class="card-title mt-2">
+                    <strong> Group/Department: </strong>
+                    Computer Science and Engineering
+                  </p>
+                  <p class="card-text mt-2">
+                    <strong> Passing Year: </strong>
+                    2024
+                  </p>
+                  <div class="operation-icon">
+                    <fa-icon
+                      (click)="open_update_educational_qualification_modal()"
+                      [icon]="faPenToSquare"
+                      type="button"
+                    ></fa-icon>
+                    <fa-icon [icon]="faTrash" type="button"></fa-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <!--Thesis or Project-->
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faFileSignature" class="fa-sm mx-1"></fa-icon>
+              <span>Thesis or Project</span>
+            </div>
+          </ng-template>
+          <div class="card mb-2" style="width: 100%">
+            <div class="row">
+              <div class="col-md-2 p-4">
+                <img
+                  alt="...."
+                  class=""
+                  src="assets/images/Publication.svg"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #8400c4">Project</h4>
+                  <h5 class="card-subtitle mt-2">Mentor Mind</h5>
+                  <p class="card-title mt-2">
+                    <strong>
+                      <fa-icon [icon]="faLink" style="color: #EE436D"></fa-icon>
+                      Link:
+                    </strong>
+                    <a
+                      class="text-decoration-none"
+                      href="http://localhost:4200/"
+                    >Mentor Mind</a
+                    >
+                  </p>
+                  <p class="card-title mt-2">
+                    <strong>
+                      <fa-icon [icon]="faCalendarDays" style="color: darkcyan"></fa-icon>
+                      Date:
+                    </strong>
+                    20 March,2021
+                  </p>
+                  <p class="card-text mt-2">
+                    <strong> Publication Description: </strong>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longerThis is a wider card with supporting text below as a
+                    natural lead-in to additional content.
+                  </p>
+                  <div class="operation-icon">
+                    <fa-icon
+                      (click)="open_update_publication_modal()"
+                      [icon]="faPenToSquare"
+                      type="button"
+                    ></fa-icon>
+                    <fa-icon [icon]="faTrash" type="button"></fa-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+
 
 <!--Educational qualification Table Update Modal-->
-<div class="modal" id="update-educational-qualification"  >
+<div class="modal" id="update-educational-qualification">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h1 class="modal-title fs-5" >Update</h1>
-        <button type="button" class="btn btn-close"  (click)="close_update_educational_qualification_modal()" ></button>
+        <h1 class="modal-title fs-5">Update</h1>
+        <button
+          (click)="close_update_educational_qualification_modal()"
+          class="btn btn-close"
+          type="button"
+        ></button>
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <form class="col lg-3" (ngSubmit)="update_educational_qualification_form.status !=='INVALID' && update_educational_qualification()" [formGroup]="update_educational_qualification_form">
+        <form
+          (ngSubmit)="
+            update_educational_qualification_form.status !== 'INVALID' &&
+              update_educational_qualification()
+          "
+          [formGroup]="update_educational_qualification_form"
+          class="col lg-3"
+        >
           <!--Institution Name-->
-          <label class="form-label" for="programme_name">Institution Name</label>
+          <label class="form-label" for="programme_name"
+          >Institution Name</label
+          >
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Institution_name-icon">
-            <fa-icon [icon]="faBuildingColumns" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="text" class="form-control" placeholder="Name of the Institution" id="institution_name" name="institution_name" formControlName="institution_name" [ngClass]="{error: getControl_of_update_educational_qualification_form('institution_name')?.errors && getControl_of_update_educational_qualification_form('institution_name')?.touched}">
+            <span class="input-group-text bg-white" id="Institution_name-icon">
+              <fa-icon
+                [icon]="faBuildingColumns"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_of_update_educational_qualification_form(
+                    'institution_name'
+                  )?.errors &&
+                  getControl_of_update_educational_qualification_form(
+                    'institution_name'
+                  )?.touched
+              }"
+              class="form-control"
+              formControlName="institution_name"
+              id="institution_name"
+              name="institution_name"
+              placeholder="Name of the Institution"
+              type="text"
+            />
           </div>
           <!--Institution Name error message-->
-          <p class="text-danger" *ngIf="institution_name_error_alert_msg">{{institution_name_error_message}}</p>
+          <p *ngIf="institution_name_error_alert_msg" class="text-danger">
+            {{ institution_name_error_message }}
+          </p>
           <!--Programme Name-->
           <label class="form-label" for="programme_name">Programme Name</label>
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Programme_name-icon">
-            <fa-icon [icon]="faUserGraduate" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="text" class="form-control" placeholder="Name of the Programme" id="programme_name" name="programme_name" formControlName="programme_name" [ngClass]="{error: getControl_of_update_educational_qualification_form('programme_name')?.errors && getControl_of_update_educational_qualification_form('programme_name')?.touched}">
+            <span class="input-group-text bg-white" id="Programme_name-icon">
+              <fa-icon
+                [icon]="faUserGraduate"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_of_update_educational_qualification_form(
+                    'programme_name'
+                  )?.errors &&
+                  getControl_of_update_educational_qualification_form(
+                    'programme_name'
+                  )?.touched
+              }"
+              class="form-control"
+              formControlName="programme_name"
+              id="programme_name"
+              name="programme_name"
+              placeholder="Name of the Programme"
+              type="text"
+            />
           </div>
           <!--Programme Name error message-->
-          <p class="text-danger" *ngIf="programme_name_error_alert_msg">{{programme_name_error_message}}</p>
+          <p *ngIf="programme_name_error_alert_msg" class="text-danger">
+            {{ programme_name_error_message }}
+          </p>
           <!--Result-->
           <label class="form-label" for="result">Result</label>
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Result-icon">
-            <fa-icon [icon]="faSquarePollHorizontal" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="text" class="form-control" placeholder="Result" id="result" name="result" formControlName="result" [ngClass]="{error: getControl_of_update_educational_qualification_form('result')?.errors && getControl_of_update_educational_qualification_form('result')?.touched}"/>
+            <span class="input-group-text bg-white" id="Result-icon">
+              <fa-icon
+                [icon]="faSquarePollHorizontal"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_of_update_educational_qualification_form('result')
+                    ?.errors &&
+                  getControl_of_update_educational_qualification_form('result')
+                    ?.touched
+              }"
+              class="form-control"
+              formControlName="result"
+              id="result"
+              name="result"
+              placeholder="Result"
+              type="text"
+            />
           </div>
           <!--Result error message-->
-          <p class="text-danger" *ngIf="result_error_alert_msg">{{result_error_message}}</p>
+          <p *ngIf="result_error_alert_msg" class="text-danger">
+            {{ result_error_message }}
+          </p>
 
           <!--Group/Department-->
           <label class="form-label" for="department">Group/Department</label>
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Group_or_Department-icon">
-            <fa-icon [icon]="faBuildingUser" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="text" class="form-control" placeholder="Your Department" id="department" name="department" formControlName="department" [ngClass]="{error: getControl_of_update_educational_qualification_form('department')?.errors && getControl_of_update_educational_qualification_form('department')?.touched}"/>
+            <span
+              class="input-group-text bg-white"
+              id="Group_or_Department-icon"
+            >
+              <fa-icon
+                [icon]="faBuildingUser"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_of_update_educational_qualification_form(
+                    'department'
+                  )?.errors &&
+                  getControl_of_update_educational_qualification_form(
+                    'department'
+                  )?.touched
+              }"
+              class="form-control"
+              formControlName="department"
+              id="department"
+              name="department"
+              placeholder="Your Department"
+              type="text"
+            />
           </div>
           <!--Group/Department error message-->
-          <p class="text-danger" *ngIf="department_error_alert_msg">{{department_error_message}}</p>
+          <p *ngIf="department_error_alert_msg" class="text-danger">
+            {{ department_error_message }}
+          </p>
 
           <!--Passing Year-->
           <label class="form-label" for="passing_year">Passing Year</label>
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white" >
-            <fa-icon [icon]="faCalendarDays"  class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="date" class="form-control"  name="passing_year" id="passing_year" formControlName="passing_year" [ngClass]="{error: getControl_of_update_educational_qualification_form('passing_year')?.errors && getControl_of_update_educational_qualification_form('passing_year')?.touched}"/>
+            <span class="input-group-text bg-white">
+              <fa-icon
+                [icon]="faCalendarDays"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_of_update_educational_qualification_form(
+                    'passing_year'
+                  )?.errors &&
+                  getControl_of_update_educational_qualification_form(
+                    'passing_year'
+                  )?.touched
+              }"
+              class="form-control"
+              formControlName="passing_year"
+              id="passing_year"
+              name="passing_year"
+              type="date"
+            />
           </div>
           <!--Passing Year error message-->
-          <p class="text-danger" *ngIf="passing_year_error_alert_msg">{{passing_year_error_message}}</p>
+          <p *ngIf="passing_year_error_alert_msg" class="text-danger">
+            {{ passing_year_error_message }}
+          </p>
           <!-- Submit button -->
           <div class="col d-flex justify-content-start">
-            <button class="update w-25 mb-1" type="submit" [disabled]="update_educational_qualification_form.status === 'INVALID' ">Update</button>
+            <button
+              [disabled]="
+                update_educational_qualification_form.status === 'INVALID'
+              "
+              class="update w-25 mb-1"
+              type="submit"
+            >
+              Update
+            </button>
           </div>
         </form>
       </div>
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button"  (click)="close_update_educational_qualification_modal()">Close</button>
+        <button
+          (click)="close_update_educational_qualification_modal()"
+          type="button"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -221,80 +435,215 @@
 <!--Educational Qualification Table Update Modal Ends-->
 
 <!--Thesis or Project Table Update Modal-->
-<div class="modal" id="update-publication"  >
+<div class="modal" id="update-publication">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h1 class="modal-title fs-5" >Update</h1>
-        <button type="button" class="btn btn-close"  (click)="close_update_publication_modal()" ></button>
+        <h1 class="modal-title fs-5">Update</h1>
+        <button
+          (click)="close_update_publication_modal()"
+          class="btn btn-close"
+          type="button"
+        ></button>
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <form class="col lg-3" (ngSubmit)="update_publications_form.status !=='INVALID' && update_publication_form()" [formGroup]="update_publications_form">
+        <form
+          (ngSubmit)="
+            update_publications_form.status !== 'INVALID' &&
+              update_publication_form()
+          "
+          [formGroup]="update_publications_form"
+          class="col lg-3"
+        >
           <!--Project or Thesis-->
-          <label class="form-label" for="project_or_thesis">Project or Thesis</label>
+          <label class="form-label" for="project_or_thesis"
+          >Project or Thesis</label
+          >
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Project_or_Thesis_icon">
-            <fa-icon [icon]="faFileSignature" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <select class="form-select" id="project_or_thesis" name="project_or_thesis" formControlName="project_or_thesis" [ngClass]="{error: getControl_update_publication_form('project_or_thesis')?.errors && getControl_update_publication_form('project_or_thesis')?.touched}">
+            <span class="input-group-text bg-white" id="Project_or_Thesis_icon">
+              <fa-icon
+                [icon]="faFileSignature"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <select
+              [ngClass]="{
+                error:
+                  getControl_update_publication_form('project_or_thesis')
+                    ?.errors &&
+                  getControl_update_publication_form('project_or_thesis')
+                    ?.touched
+              }"
+              class="form-select"
+              formControlName="project_or_thesis"
+              id="project_or_thesis"
+              name="project_or_thesis"
+            >
               <option [defaultSelected]="true">Choose one</option>
               <option value="Project">Project</option>
               <option value="Thesis">Thesis</option>
             </select>
           </div>
           <!--Project_or_Thesis error message-->
-          <alert type="danger" [dismissible]="true" *ngIf="project_or_thesis_error_alert_msg">{{project_or_thesis_error_message}}</alert>
+          <alert
+            *ngIf="project_or_thesis_error_alert_msg"
+            [dismissible]="true"
+            type="danger"
+          >{{ project_or_thesis_error_message }}</alert
+          >
 
           <!--Title-->
           <label class="form-label" for="title">Title</label>
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white ">
-            <fa-icon [icon]="faUserTag" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="text" class="form-control" placeholder="Title Here" id="title" name="title" formControlName="title" [ngClass]="{error: getControl_update_publication_form('title')?.errors && getControl_update_publication_form('title')?.touched}">
+            <span class="input-group-text bg-white">
+              <fa-icon
+                [icon]="faUserTag"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_update_publication_form('title')?.errors &&
+                  getControl_update_publication_form('title')?.touched
+              }"
+              class="form-control"
+              formControlName="title"
+              id="title"
+              name="title"
+              placeholder="Title Here"
+              type="text"
+            />
           </div>
           <!--Title error message-->
-          <alert type="danger" [dismissible]="true" *ngIf="title_error_alert_msg">{{title_error_message}}</alert>
+          <alert
+            *ngIf="title_error_alert_msg"
+            [dismissible]="true"
+            type="danger"
+          >{{ title_error_message }}</alert
+          >
           <!--Publication Link-->
-          <label class="form-label" for="publication_link">Publication link</label>
+          <label class="form-label" for="publication_link"
+          >Publication link</label
+          >
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Publication_link_icon">
-            <fa-icon [icon]="faLink" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="url" class="form-control" placeholder="Add a link of your publication" id="publication_link" name="publication_link" formControlName="publication_link" [ngClass]="{error: getControl_update_publication_form('publication_link')?.errors && getControl_update_publication_form('publication_link')?.touched}"/>
+            <span class="input-group-text bg-white" id="Publication_link_icon">
+              <fa-icon
+                [icon]="faLink"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_update_publication_form('publication_link')
+                    ?.errors &&
+                  getControl_update_publication_form('publication_link')
+                    ?.touched
+              }"
+              class="form-control"
+              formControlName="publication_link"
+              id="publication_link"
+              name="publication_link"
+              placeholder="Add a link of your publication"
+              type="url"
+            />
           </div>
           <!--Publication Link error message-->
-          <alert type="danger" [dismissible]="true" *ngIf="publication_link_error_alert_msg">{{publication_link_error_message}}</alert>
+          <alert
+            *ngIf="publication_link_error_alert_msg"
+            [dismissible]="true"
+            type="danger"
+          >{{ publication_link_error_message }}</alert
+          >
 
           <!--Date of Publication-->
-          <label class="form-label" for="date_of_publication">Date of Publication</label>
+          <label class="form-label" for="date_of_publication"
+          >Date of Publication</label
+          >
           <div class="input-group mb-2">
-          <span class="input-group-text bg-white " >
-            <fa-icon [icon]="faCalendarDays"  class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-          </span>
-            <input type="date" class="form-control"  name="date_of_publication" id="date_of_publication" formControlName="date_of_publication" [ngClass]="{error: getControl_update_publication_form('date_of_publication')?.errors && getControl_update_publication_form('date_of_publication')?.touched}" />
+            <span class="input-group-text bg-white">
+              <fa-icon
+                [icon]="faCalendarDays"
+                class="fa-flip fa-lg"
+                style="color: #8400c4"
+              ></fa-icon>
+            </span>
+            <input
+              [ngClass]="{
+                error:
+                  getControl_update_publication_form('date_of_publication')
+                    ?.errors &&
+                  getControl_update_publication_form('date_of_publication')
+                    ?.touched
+              }"
+              class="form-control"
+              formControlName="date_of_publication"
+              id="date_of_publication"
+              name="date_of_publication"
+              type="date"
+            />
           </div>
           <!--Date of Publication error message-->
-          <alert type="danger" [dismissible]="true" *ngIf="date_of_publication_error_alert_msg">{{date_of_publication_error_message}}</alert>
+          <alert
+            *ngIf="date_of_publication_error_alert_msg"
+            [dismissible]="true"
+            type="danger"
+          >{{ date_of_publication_error_message }}</alert
+          >
           <!--Description-->
-          <label class="form-label" for="publication_description">Publication Description</label>
+          <label class="form-label" for="publication_description"
+          >Publication Description</label
+          >
           <div class="input-group mb-1">
-            <textarea type="text"  placeholder="Write Your Message Here" class="form-control"  rows="5" cols="5" name="publication_description" id="publication_description" formControlName="publication_description" [ngClass]="{error: getControl_update_publication_form('publication_description')?.errors && getControl_update_publication_form('publication_description')?.touched}"></textarea>
+            <textarea
+              [ngClass]="{
+                error:
+                  getControl_update_publication_form('publication_description')
+                    ?.errors &&
+                  getControl_update_publication_form('publication_description')
+                    ?.touched
+              }"
+              class="form-control"
+              cols="5"
+              formControlName="publication_description"
+              id="publication_description"
+              name="publication_description"
+              placeholder="Write Your Message Here"
+              rows="5"
+              type="text"
+            ></textarea>
           </div>
           <p id="description_counter"></p>
           <!--Description error message-->
-          <alert type="danger" [dismissible]="true" *ngIf="publication_description_error_alert_msg">{{publication_description_error_message}}</alert>
+          <alert
+            *ngIf="publication_description_error_alert_msg"
+            [dismissible]="true"
+            type="danger"
+          >{{ publication_description_error_message }}</alert
+          >
           <!-- Submit button -->
           <div class="col d-flex justify-content-start">
-            <button class="update w-25  mb-1" type="submit" [disabled]="update_publications_form.status === 'INVALID' ">Update</button>
+            <button
+              [disabled]="update_publications_form.status === 'INVALID'"
+              class="update w-25 mb-1"
+              type="submit"
+            >
+              Update
+            </button>
           </div>
         </form>
       </div>
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button"  (click)="close_update_publication_modal()">Close</button>
+        <button (click)="close_update_publication_modal()" type="button">
+          Close
+        </button>
       </div>
     </div>
   </div>

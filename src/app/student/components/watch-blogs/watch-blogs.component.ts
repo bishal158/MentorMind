@@ -1,5 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {faArrowRight, faFileSignature, faFilter, faSearch, faStopwatch} from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faComments,
+  faFileSignature,
+  faFilter,
+  faSearch,
+  faStopwatch
+} from "@fortawesome/free-solid-svg-icons";
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 
@@ -50,4 +57,5 @@ export class WatchBlogsComponent implements OnInit {
   protected readonly faSearch = faSearch;
   protected readonly faFilter = faFilter;
   protected readonly faStopwatch = faStopwatch;
+  protected readonly faComments = faComments;
 }

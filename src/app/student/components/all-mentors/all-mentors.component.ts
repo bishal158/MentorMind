@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faArrowRight, faFilter, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight, faEye, faFilter, faSearch, faUserPlus} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-all-mentors',
@@ -11,4 +11,6 @@ export class AllMentorsComponent {
   protected readonly faSearch = faSearch;
   protected readonly faFilter = faFilter;
   protected readonly faArrowRight = faArrowRight;
+  protected readonly faEye = faEye;
+  protected readonly faUserPlus = faUserPlus;
 }

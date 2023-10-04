@@ -5,6 +5,8 @@ import { StudentAboutComponent } from './components/student-about/student-about.
 import {WatchBlogsComponent} from "./components/watch-blogs/watch-blogs.component";
 import {DownloadResourcesComponent} from "./components/download-resources/download-resources.component";
 import {AllMentorsComponent} from "./components/all-mentors/all-mentors.component";
+import {MyMentorsComponent} from "./components/my-mentors/my-mentors.component";
+import {MentorAboutComponent} from "./components/mentor-about/mentor-about.component";
 
 const routes: Routes = [
   {
@@ -13,6 +15,8 @@ const routes: Routes = [
       { path: 'all-mentors', component: AllMentorsComponent},
       { path: 'blogs', component:WatchBlogsComponent},
       { path: 'download-resources', component:DownloadResourcesComponent},
+      { path: 'mentor-about', component:MentorAboutComponent},
+      { path: 'my-mentors', component:MyMentorsComponent},
     ]
   },
 ];
