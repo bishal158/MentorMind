@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+@-webkit-keyframes slit-in-vertical {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateY(90deg);
+    transform: translateZ(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateY(87deg);
+    transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+    transform: translateZ(0) rotateY(0);
+  }
+}
+
+@keyframes slit-in-vertical {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateY(90deg);
+    transform: translateZ(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateY(87deg);
+    transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+    transform: translateZ(0) rotateY(0);
+  }
+}
+
+.slit-in-vertical {
+  -webkit-animation: slit-in-vertical 0.35s linear both;
+  animation: slit-in-vertical 0.35s linear both;
+}
+
+.image-content, .card-content {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.button-content {
+  width: 100%;
+}
+
+.overly {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #8400c4;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overly::before, .overly::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #8400c4;
+}
+
+.overly::after {
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #8400c4;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: #FFF;
+  width: 360px;
+  height: auto;
+  margin-right: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+}
+
+.button {
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #8400c4;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 14px;
+  transition: all 0.3s ease;
+}
+
+/*Header Animation*/
+
+@-webkit-keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+@keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+.text-blur-out {
+  -webkit-animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s infinite both;
+  animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s infinite both;
+}
+
+/*heading style*/
+.header {
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #566fb2;
+}
+
+/*rating color*/
+.very_poor {
+  color: red;
+}
+
+.poor {
+  color: #df6363;
+}
+
+.fair {
+  color: tan;
+}
+
+.good {
+  color: #75c975;
+}
+
+.excellent {
+  color: green;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  20% {
+    opacity: 1;
+    width: 0;
+  }
+  30% {
+    width: 355px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 355px;
+  }
+}
+
+.header p {
+  font-size: 12px;
+  color: #999;
+}
+
+.hover {
+  box-shadow: 0 1px 2px rgb(255, 255, 255)
+}
+
+.hover:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
+  translate: scale(1.2);
+}

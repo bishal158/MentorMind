@@ -1,0 +1,134 @@
+<div
+  class="main-container d-flex justify-content-center align-items-center mt-4"
+>
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div
+      class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side"
+    >
+      <!--Logo Div-->
+      <div class="logo mb-6 p-3">
+        <img
+          alt="Register"
+          class="img-fluid"
+          src="/assets/images/Studying.gif"
+        />
+      </div>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Share Your Resource
+      </h3>
+      <form
+        (ngSubmit)="share_resources_form.status !== 'INVALID' && add()"
+        [formGroup]="share_resources_form"
+        class="col lg-3"
+      >
+        <!--Topic-->
+        <label class="form-label" for="topic">Topic</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faUserTag"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error: getControl('topic')?.errors && getControl('topic')?.touched
+            }"
+            class="form-control"
+            formControlName="topic"
+            id="topic"
+            name="topic"
+            placeholder="Topic Here"
+            type="text"
+          />
+        </div>
+        <!--Topic error message-->
+        <alert
+          *ngIf="topic_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ topic_error_message }}</alert
+        >
+
+
+        <!--Topic Document-->
+        <label class="form-label" for="topic_document">Topic Document</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faFileArchive"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error: getControl('topic_document')?.errors && getControl('topic_document')?.touched
+            }"
+            class="form-control"
+            formControlName="topic_document"
+            id="topic_document"
+            name="topic_document"
+            placeholder="Upload Document Here"
+            type="file"
+          />
+        </div>
+        <!--Topic Document error message-->
+        <alert
+          *ngIf="topic_document_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ topic_document_error_message }}</alert
+        >
+
+        <!--resource_description-->
+        <label class="form-label" for="resource_description"
+        >Resource Description</label
+        >
+        <div class="input-group mb-1">
+          <textarea
+            [ngClass]="{
+              error:
+                getControl('resource_description')?.errors &&
+                getControl('resource_description')?.touched
+            }"
+            class="form-control"
+            cols="5"
+            formControlName="resource_description"
+            id="resource_description"
+            name="resource_description"
+            placeholder="Write Your Message Here"
+            rows="5"
+            type="text"
+          ></textarea>
+        </div>
+        <p id="description_counter"></p>
+        <!--Description error message-->
+        <alert
+          *ngIf="resource_description_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ resource_description_error_message }}</alert
+        >
+        <!-- Submit button -->
+        <div class="col d-flex justify-content-start">
+          <button
+            [disabled]="share_resources_form.status === 'INVALID'"
+            class="login-button w-100 mb-3"
+            type="submit"
+          >
+            Share Resources
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

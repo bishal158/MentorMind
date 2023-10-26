@@ -1,38 +1,44 @@
 // Swiper js Library
-import {register} from 'swiper/element/bundle';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {LoginComponent} from './login/login.component';
-import {RegistrationComponent} from './registration/registration.component';
-import {HomeComponent} from './home/home.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {FooterComponent} from './footer/footer.component';
-import {FrequentAskQuestionComponent} from './frequent-ask-question/frequent-ask-question.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {CounterComponent} from './counter/counter.component';
-import {ContactUsComponent} from './contact-us/contact-us.component';
-import {TopMentorComponent} from './top-mentor/top-mentor.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CarouselModule} from 'ngx-bootstrap/carousel';
-import {AlertModule} from 'ngx-bootstrap/alert';
-import {BannerComponent} from './banner/banner.component';
-import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
-import {TabsModule} from 'ngx-bootstrap/tabs';
-import {RatingModule} from 'ngx-bootstrap/rating';
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
-import {CollapseModule} from 'ngx-bootstrap/collapse';
-import {StudentMentorModule} from "./student-mentor/student-mentor.module";
-import {StudentModule} from './student/student.module';
-import {StudentMentorInfoComponent} from './student-mentor-info/student-mentor-info.component';
-import {EditorModule} from '@tinymce/tinymce-angular';
-import {LogoComponent} from './logo/logo.component';
-import {ToastrModule} from "ngx-toastr";
+import { register } from 'swiper/element/bundle';
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  NgModule,
+  NO_ERRORS_SCHEMA,
+} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FrequentAskQuestionComponent } from './components/frequent-ask-question/frequent-ask-question.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CounterComponent } from './components/counter/counter.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { TopMentorComponent } from './components/top-mentor/top-mentor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { BannerComponent } from './components/banner/banner.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
+import { StudentModule } from './modules/student/student.module';
+import { StudentMentorInfoComponent } from './components/student-mentor-info/student-mentor-info.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { LogoComponent } from './components/logo/logo.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentMentorModule } from './modules/student-mentor/student-mentor.module';
 
 //swiper js library
 register();
@@ -62,6 +68,7 @@ register();
     FontAwesomeModule,
     RouterModule,
     NgbModule,
+    HttpClientModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot(),
     TabsModule.forRoot(),
@@ -73,14 +80,11 @@ register();
     StudentModule,
     EditorModule,
     ToastrModule.forRoot(),
-
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  exports: [
-    FooterComponent
-  ]
+  exports: [],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -1,0 +1,91 @@
+<div class="main-container d-flex  justify-content-center align-items-center mt-4">
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side">
+      <!--Logo Div-->
+      <div class="logo mb-6 p-3">
+        <img alt="Register" class="img-fluid" src="/assets/images/Learning.gif">
+      </div>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3 class="text-center text-light rounded-1 mb-2 p-2" style="background-color: #8400c4;">Add Your
+        Qualification</h3>
+      <form (ngSubmit)="educational_qualification_form.status !=='INVALID' && add()" [formGroup]="educational_qualification_form"
+            class="col lg-3">
+        <!--Institution Name-->
+        <label class="form-label" for="programme_name">Institution Name</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Institution_name-icon">
+            <fa-icon [icon]="faBuildingColumns" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input [ngClass]="{error: getControl('institution_name')?.errors && getControl('institution_name')?.touched}" class="form-control" formControlName="institution_name" id="institution_name"
+                 name="institution_name" placeholder="Name of the Institution"
+                 type="text">
+        </div>
+        <!--Institution Name error message-->
+        <alert *ngIf="institution_name_error_alert_msg" [dismissible]="true"
+               type="danger">{{institution_name_error_message}}</alert>
+
+        <!--Programme Name-->
+        <label class="form-label" for="programme_name">Programme Name</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Programme_name-icon">
+            <fa-icon [icon]="faUserGraduate" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input [ngClass]="{error: getControl('programme_name')?.errors && getControl('programme_name')?.touched}" class="form-control" formControlName="programme_name" id="programme_name"
+                 name="programme_name" placeholder="Name of the Programme"
+                 type="text">
+        </div>
+        <!--Programme Name error message-->
+        <alert *ngIf="programme_name_error_alert_msg" [dismissible]="true"
+               type="danger">{{programme_name_error_message}}</alert>
+        <!--Result-->
+        <label class="form-label" for="result">Result</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Result-icon">
+            <fa-icon [icon]="faSquarePollHorizontal" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input [ngClass]="{error: getControl('result')?.errors && getControl('result')?.touched}" class="form-control" formControlName="result" id="result" name="result"
+                 placeholder="Result"
+                 type="text"/>
+        </div>
+        <!--Result error message-->
+        <alert *ngIf="result_error_alert_msg" [dismissible]="true" type="danger">{{result_error_message}}</alert>
+
+        <!--Group/Department-->
+        <label class="form-label" for="department">Group/Department</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Group_or_Department-icon">
+            <fa-icon [icon]="faBuildingUser" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input [ngClass]="{error: getControl('department')?.errors && getControl('department')?.touched}" class="form-control" formControlName="department" id="department" name="department"
+                 placeholder="Your Department"
+                 type="text"/>
+        </div>
+        <!--Group/Department error message-->
+        <alert *ngIf="department_error_alert_msg" [dismissible]="true"
+               type="danger">{{department_error_message}}</alert>
+
+        <!--Passing Year-->
+        <label class="form-label" for="passing_year">Passing Year</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white " id="Date-icon">
+            <fa-icon [icon]="faCalendarDays" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          </span>
+          <input [ngClass]="{error: getControl('passing_year')?.errors && getControl('passing_year')?.touched}" class="form-control" formControlName="passing_year" id="passing_year" name="passing_year"
+                 type="date"/>
+        </div>
+        <!--Passing Year error message-->
+        <alert *ngIf="passing_year_error_alert_msg" [dismissible]="true"
+               type="danger">{{passing_year_error_message}}</alert>
+        <!-- Submit button -->
+        <div class="col d-flex justify-content-start">
+          <button [disabled]="educational_qualification_form.status === 'INVALID' " class=" login-button w-100 mb-3"
+                  type="submit">Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
