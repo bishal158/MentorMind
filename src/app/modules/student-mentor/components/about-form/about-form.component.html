@@ -1,19 +1,54 @@
-<div class="main-container d-flex  justify-content-center align-items-center mt-4">
+<div
+  class="main-container d-flex justify-content-center align-items-center mt-4"
+>
   <div class="row border rounded-3 p-5 bg-white shadow box-aria">
     <!--Form Side-->
     <div class="col-md-12">
-      <h3 class="text-center text-light rounded-1 mb-2 p-2" style="background-color: #8400c4;">Write About Yourself</h3>
-      <form class="col lg-3" (ngSubmit)="aboutForm.status !=='INVALID' && save()" [formGroup]="aboutForm">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Write About Yourself
+      </h3>
+      <form
+        class="col lg-3"
+        (ngSubmit)="aboutForm.status !== 'INVALID' && save()"
+        [formGroup]="aboutForm"
+      >
         <!--About-->
         <div class="input-group mb-2">
-          <textarea type="text" class="form-control" placeholder="Write Your Message Here"  rows="15" cols="15" id="about" name="about" formControlName="about" [ngClass]="{error: getControl('about')?.errors && getControl('about')?.touched}"></textarea>
+          <textarea
+            type="text"
+            class="form-control"
+            placeholder="Write Your Message Here"
+            rows="15"
+            cols="15"
+            id="about"
+            name="about"
+            formControlName="about"
+            [ngClass]="{
+              error: getControl('about')?.errors && getControl('about')?.touched
+            }"
+          ></textarea>
         </div>
         <p id="counter"></p>
         <!--Username error message-->
-        <alert [dismissible]="true" type="danger" class="text-danger" *ngIf="about_error_alert_msg">{{about_error_message}}</alert>
+        <alert
+          [dismissible]="true"
+          type="danger"
+          class="text-danger"
+          *ngIf="about_error_alert_msg"
+          >{{ about_error_message }}</alert
+        >
         <!-- Submit button -->
         <div class="col d-flex justify-content-start">
-          <button class=" login-button w-50 mb-3" type="submit" [disabled]="aboutForm.status === 'INVALID' ">Save</button>
+          <button
+            class="login-button w-50 mb-3"
+            type="submit"
+            [disabled]="aboutForm.status === 'INVALID'"
+          >
+            Save
+          </button>
         </div>
       </form>
     </div>

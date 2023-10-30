@@ -1,41 +1,76 @@
 <h4 class="header">
   <div class="text-blur-out">Read Blogs-"Increase Your Knowledge"</div>
 </h4>
-<div *ngFor="let mentee of mentees" class="card mb-3 mt-2 swing-in-left-fwd blogs" style="width: 100%">
+<div class="card mb-3 mt-2 swing-in-left-fwd blogs" style="width: 100%">
   <div class="row g-0">
     <div class="col-md-2 mentor-image">
-      <img
-        alt=""
-        class=""
-        src="{{mentee.image}}"
-      />
+      <img alt="" class="" src="./assets/images/top-mentors/mentor.jpg" />
     </div>
     <div class="col-md-10">
       <div class="card-body">
-        <h4 class="card-title bar">{{mentee.fullname}}</h4>
+        <h4 class="card-title bar">Mafuj Ahmed Bishal</h4>
         <p class="card-title mt-1">
           <strong>
             <fa-icon [icon]="faIdBadge" style="color: teal"></fa-icon>
           </strong>
-          {{mentee.studentid}}
+          201002158
         </p>
         <p class="card-title mt-1">
           <strong>
             <fa-icon [icon]="faEnvelope" style="color: teal"></fa-icon>
           </strong>
-          {{mentee.email}}
+          abc@gmail.com
         </p>
         <p class="card-title mt-1">
           <strong>
             <fa-icon [icon]="faMobile" style="color: #3b5998"></fa-icon>
           </strong>
-          {{mentee.phone}}
+          01798541625
         </p>
         <p class="card-text mt-1">
           <strong>About:</strong>
-          {{mentee.about}}
+          salutatus proin meliore posse debet sagittis sumo porttitor mauris in
+          lobortis inimicus mentitum feugait volutpat
         </p>
       </div>
     </div>
   </div>
 </div>
+<!--<div-->
+<!--  *ngFor="let mentee of mentees"-->
+<!--  class="card mb-3 mt-2 swing-in-left-fwd blogs"-->
+<!--  style="width: 100%"-->
+<!--&gt;-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-2 mentor-image">-->
+<!--      <img alt="" class="" src="{{ mentee.image }}" />-->
+<!--    </div>-->
+<!--    <div class="col-md-10">-->
+<!--      <div class="card-body">-->
+<!--        <h4 class="card-title bar">{{ mentee.fullname }}</h4>-->
+<!--        <p class="card-title mt-1">-->
+<!--          <strong>-->
+<!--            <fa-icon [icon]="faIdBadge" style="color: teal"></fa-icon>-->
+<!--          </strong>-->
+<!--          {{ mentee.studentid }}-->
+<!--        </p>-->
+<!--        <p class="card-title mt-1">-->
+<!--          <strong>-->
+<!--            <fa-icon [icon]="faEnvelope" style="color: teal"></fa-icon>-->
+<!--          </strong>-->
+<!--          {{ mentee.email }}-->
+<!--        </p>-->
+<!--        <p class="card-title mt-1">-->
+<!--          <strong>-->
+<!--            <fa-icon [icon]="faMobile" style="color: #3b5998"></fa-icon>-->
+<!--          </strong>-->
+<!--          {{ mentee.phone }}-->
+<!--        </p>-->
+<!--        <p class="card-text mt-1">-->
+<!--          <strong>About:</strong>-->
+<!--          {{ mentee.about }}-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

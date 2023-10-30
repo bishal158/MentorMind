@@ -32,7 +32,7 @@
 <h4 class="header">
   <div class="text-blur-out">Read Blogs-"Increase Your Knowledge"</div>
 </h4>
-<div *ngFor="let blog of blogs" class="card blogs mb-3 mt-5 swing-in-left-fwd" style="width: 100%">
+<div class="card blogs mb-3 mt-5 swing-in-left-fwd" style="width: 100%">
   <div class="row g-0">
     <div class="col-md-3 image">
       <figure>
@@ -46,10 +46,17 @@
     </div>
     <div class="col-md-9">
       <div class="card-body">
-        <h4 class="card-title bar">{{blog.blog_title}}</h4>
+        <h4 class="card-title bar">Web Programming</h4>
         <p class="card-text mt-2">
-          <strong>Description:</strong> {{blog.blog_description}}
-
+          <strong>Description:</strong> viverra pharetra platea inimicus
+          disputationi quam vocent omnesque ubique nullam diam nobis populo
+          noluisse ipsum debet postulant sem assueverit epicurei viverra pharetra platea inimicus
+          disputationi quam vocent omnesque ubique nullam diam nobis populo
+          noluisse ipsum debet postulant sem assueverit epicureiviverra pharetra platea inimicus
+          disputationi quam vocent omnesque ubique nullam diam nobis populo
+          noluisse ipsum debet postulant sem assueverit epicurei viverra pharetra platea inimicus
+          disputationi quam vocent omnesque ubique nullam diam nobis populo
+          noluisse ipsum debet postulant sem assueverit epicurei
         </p>
         <p class="card-text">
           <fa-icon [icon]="faStopwatch" class="mx-1"></fa-icon>
@@ -57,7 +64,7 @@
         </p>
         <button class="read_more">
           <a class="btn" routerLink="/student-mentor/show-full-blog"
-          >Read More
+            >Read More
             <fa-icon [icon]="faArrowRight" class="mx-1"></fa-icon>
           </a>
         </button>
@@ -71,7 +78,11 @@
         <ng-template #template>
           <div class="modal-body text-center">
             <p>Do you want to delete this blog???</p>
-            <button (click)="deleteBlog(blog.id)" class="btn btn-danger mx-1" type="button">
+            <button
+
+              class="btn btn-danger mx-1"
+              type="button"
+            >
               Yes
             </button>
             <button (click)="decline()" class="btn btn-primary" type="button">
@@ -89,6 +100,68 @@
     </div>
   </div>
 </div>
-
+<!--<div-->
+<!--  *ngFor="let blog of blogs"-->
+<!--  class="card blogs mb-3 mt-5 swing-in-left-fwd"-->
+<!--  style="width: 100%"-->
+<!--&gt;-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-3 image">-->
+<!--      <figure>-->
+<!--        <img-->
+<!--          alt=""-->
+<!--          class=""-->
+<!--          src="assets/images/Blogs-card/blog2.gif"-->
+<!--          style="height: 100%; width: 100%"-->
+<!--        />-->
+<!--      </figure>-->
+<!--    </div>-->
+<!--    <div class="col-md-9">-->
+<!--      <div class="card-body">-->
+<!--        <h4 class="card-title bar">{{ blog.blog_title }}</h4>-->
+<!--        <p class="card-text mt-2">-->
+<!--          <strong>Description:</strong> {{ blog.blog_description }}-->
+<!--        </p>-->
+<!--        <p class="card-text">-->
+<!--          <fa-icon [icon]="faStopwatch" class="mx-1"></fa-icon>-->
+<!--          <small class="text-body-secondary">Posted at 'Date goes here'</small>-->
+<!--        </p>-->
+<!--        <button class="read_more">-->
+<!--          <a class="btn" routerLink="/student-mentor/show-full-blog"-->
+<!--          >Read More-->
+<!--            <fa-icon [icon]="faArrowRight" class="mx-1"></fa-icon>-->
+<!--          </a>-->
+<!--        </button>-->
+<!--        <button (click)="openModal(template)" class="delete_blogs">-->
+<!--          <a class="btn">-->
+<!--            <fa-icon [icon]="faTrash" class="mx-1"></fa-icon>-->
+<!--            Delete Blog-->
+<!--          </a>-->
+<!--        </button>-->
+<!--        &lt;!&ndash;Delete Modal&ndash;&gt;-->
+<!--        <ng-template #template>-->
+<!--          <div class="modal-body text-center">-->
+<!--            <p>Do you want to delete this blog???</p>-->
+<!--            <button-->
+<!--              (click)="deleteBlog(blog.id)"-->
+<!--              class="btn btn-danger mx-1"-->
+<!--              type="button"-->
+<!--            >-->
+<!--              Yes-->
+<!--            </button>-->
+<!--            <button (click)="decline()" class="btn btn-primary" type="button">-->
+<!--              No-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </ng-template>-->
+<!--        <button class="comments">-->
+<!--          <a class="btn">-->
+<!--            <fa-icon [icon]="faComments" class="mx-1"></fa-icon>-->
+<!--            22222222 Comments-->
+<!--          </a>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 <!--Delete Modal-->
-

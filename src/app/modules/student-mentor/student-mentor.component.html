@@ -1,11 +1,15 @@
 <div class="main-container d-flex">
   <div [collapse]="isCollapsed" [ngClass]="{}" class="sidebar" id="side_nav">
     <div class="header-box px-2 pt-2 pb-4 d-flex justify-content-between">
-      <button (click)="isCollapsed=!isCollapsed;" [attr.aria-expanded]="!isCollapsed" aria-controls="side_nav"
-              class="bars">
-          <span>
-            <fa-icon [icon]="faBarsStaggered" style="color: white"></fa-icon>
-          </span>
+      <button
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="side_nav"
+        class="bars"
+      >
+        <span>
+          <fa-icon [icon]="faBarsStaggered" style="color: white"></fa-icon>
+        </span>
       </button>
     </div>
     <ul class="list-unstyled px-2">
@@ -24,18 +28,28 @@
       <li class="nav-list-item">
         <fa-icon [icon]="faGear"></fa-icon>
         <span>
-          <a routerLink="/student-mentor/student-mentor-account-settings">Account Settings</a>
+          <a routerLink="/student-mentor/student-mentor-account-settings"
+            >Account Settings</a
+          >
         </span>
       </li>
       <li class="nav-list-item">
         <fa-icon [icon]="faBlog"></fa-icon>
         <span>
-          <a (click)="open_inner_item = !open_inner_item" [attr.aria-expanded]="!open_inner_item"
-             aria-controls="open_inner_item"
-             type="button">Your Blogs</a>
+          <a
+            (click)="open_inner_item = !open_inner_item"
+            [attr.aria-expanded]="!open_inner_item"
+            aria-controls="open_inner_item"
+            type="button"
+            >Your Blogs</a
+          >
         </span>
-        <ul [collapse]="open_inner_item" [isAnimated]="open_inner_item" class="inner-item list-unstyled px-2"
-            id="open_inner_item">
+        <ul
+          [collapse]="open_inner_item"
+          [isAnimated]="open_inner_item"
+          class="inner-item list-unstyled px-2"
+          id="open_inner_item"
+        >
           <li class="inner-item-list">
             <fa-icon [icon]="faReplyAll"></fa-icon>
             <span>
@@ -45,13 +59,17 @@
           <li class="inner-item-list">
             <fa-icon [icon]="faPenToSquare"></fa-icon>
             <span>
-              <a routerLink="/student-mentor/write-your-blogs">Write New Blogs</a>
+              <a routerLink="/student-mentor/write-your-blogs"
+                >Write New Blogs</a
+              >
             </span>
           </li>
           <li class="inner-item-list">
             <fa-icon [icon]="faEye"></fa-icon>
             <span>
-              <a routerLink="/student-mentor/watch-others-blogs">Watch Other's Blogs</a>
+              <a routerLink="/student-mentor/watch-others-blogs"
+                >Watch Other's Blogs</a
+              >
             </span>
           </li>
         </ul>
@@ -73,19 +91,28 @@
   <div class="content">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <div class="d-flex justify-content-between d-block  ">
-          <a class="navbar-brand" href="#"><span class="logo-left"><b>MENTOR</b></span><span
-            class="logo-right"><b>MIND</b></span></a>
-          <button (click)="isCollapsed=!isCollapsed" [attr.aria-expanded]="!isCollapsed"
-                  aria-controls="side_nav"
-                  class="bars">
+        <div class="d-flex justify-content-between d-block">
+          <a class="navbar-brand" href="#"
+            ><span class="logo-left"><b>MENTOR</b></span
+            ><span class="logo-right"><b>MIND</b></span></a
+          >
+          <button
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="side_nav"
+            class="bars"
+          >
             <span><fa-icon [icon]="faBarsStaggered"></fa-icon></span>
           </button>
         </div>
         <div class="collapse navbar-collapse justify-content-end">
-          <ul class="navbar-nav  mb-2 mb-lg-0 ">
+          <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <img alt="" id="profile-img" src="assets/images/top-mentors/mentor1.png">
+              <img
+                alt=""
+                id="profile-img"
+                src="assets/images/top-mentors/mentor.jpg"
+              />
               <span>Mafuj Ahmed Bishal</span>
             </li>
           </ul>
@@ -94,7 +121,10 @@
     </nav>
     <div class="display-content">
       <router-outlet></router-outlet>
-      <div *ngIf="windowScrolled" class="d-flex justify-content-end align-items-baseline mt-3">
+      <div
+        *ngIf="windowScrolled"
+        class="d-flex justify-content-end align-items-baseline mt-3"
+      >
         <button (click)="go_to_top()" class="back_to_top">
           <fa-icon [icon]="faArrowUp"></fa-icon>
           Back to Top

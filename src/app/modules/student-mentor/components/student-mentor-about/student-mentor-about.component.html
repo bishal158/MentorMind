@@ -6,7 +6,7 @@
       <img
         alt=""
         class=""
-        src="assets/images/top-mentors/mentor1.png"
+        src="assets/images/top-mentors/mentor.jpg"
         style="height: 100%; width: 100%"
       />
     </div>
@@ -31,7 +31,13 @@
           <rating
             [(ngModel)]="rate"
             [max]="max"
-            [ngClass]="{very_poor: rate>=0 && rate <= 2 , poor: rate>2 && rate <= 4 , fair: rate > 4 && rate <= 6 , good: rate > 6 && rate <= 8, excellent: rate > 8 && rate <= 10 }"
+            [ngClass]="{
+              very_poor: rate >= 0 && rate <= 2,
+              poor: rate > 2 && rate <= 4,
+              fair: rate > 4 && rate <= 6,
+              good: rate > 6 && rate <= 8,
+              excellent: rate > 8 && rate <= 10
+            }"
             [readonly]="isReadonly"
             class="text-start"
           ></rating>
@@ -172,18 +178,21 @@
                   <h5 class="card-subtitle mt-2">Mentor Mind</h5>
                   <p class="card-title mt-2">
                     <strong>
-                      <fa-icon [icon]="faLink" style="color: #EE436D"></fa-icon>
+                      <fa-icon [icon]="faLink" style="color: #ee436d"></fa-icon>
                       Link:
                     </strong>
                     <a
                       class="text-decoration-none"
                       href="http://localhost:4200/"
-                    >Mentor Mind</a
+                      >Mentor Mind</a
                     >
                   </p>
                   <p class="card-title mt-2">
                     <strong>
-                      <fa-icon [icon]="faCalendarDays" style="color: darkcyan"></fa-icon>
+                      <fa-icon
+                        [icon]="faCalendarDays"
+                        style="color: darkcyan"
+                      ></fa-icon>
                       Date:
                     </strong>
                     20 March,2021
@@ -213,10 +222,9 @@
   </div>
 </div>
 
-
 <!--Educational qualification Table Update Modal-->
 <div class="modal" id="update-educational-qualification">
-  <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
@@ -239,7 +247,7 @@
         >
           <!--Institution Name-->
           <label class="form-label" for="programme_name"
-          >Institution Name</label
+            >Institution Name</label
           >
           <div class="input-group mb-2">
             <span class="input-group-text bg-white" id="Institution_name-icon">
@@ -454,7 +462,7 @@
         >
           <!--Project or Thesis-->
           <label class="form-label" for="project_or_thesis"
-          >Project or Thesis</label
+            >Project or Thesis</label
           >
           <div class="input-group mb-2">
             <span class="input-group-text bg-white" id="Project_or_Thesis_icon">
@@ -487,7 +495,7 @@
             *ngIf="project_or_thesis_error_alert_msg"
             [dismissible]="true"
             type="danger"
-          >{{ project_or_thesis_error_message }}</alert
+            >{{ project_or_thesis_error_message }}</alert
           >
 
           <!--Title-->
@@ -519,11 +527,11 @@
             *ngIf="title_error_alert_msg"
             [dismissible]="true"
             type="danger"
-          >{{ title_error_message }}</alert
+            >{{ title_error_message }}</alert
           >
           <!--Publication Link-->
           <label class="form-label" for="publication_link"
-          >Publication link</label
+            >Publication link</label
           >
           <div class="input-group mb-2">
             <span class="input-group-text bg-white" id="Publication_link_icon">
@@ -554,12 +562,12 @@
             *ngIf="publication_link_error_alert_msg"
             [dismissible]="true"
             type="danger"
-          >{{ publication_link_error_message }}</alert
+            >{{ publication_link_error_message }}</alert
           >
 
           <!--Date of Publication-->
           <label class="form-label" for="date_of_publication"
-          >Date of Publication</label
+            >Date of Publication</label
           >
           <div class="input-group mb-2">
             <span class="input-group-text bg-white">
@@ -589,11 +597,11 @@
             *ngIf="date_of_publication_error_alert_msg"
             [dismissible]="true"
             type="danger"
-          >{{ date_of_publication_error_message }}</alert
+            >{{ date_of_publication_error_message }}</alert
           >
           <!--Description-->
           <label class="form-label" for="publication_description"
-          >Publication Description</label
+            >Publication Description</label
           >
           <div class="input-group mb-1">
             <textarea
@@ -620,7 +628,7 @@
             *ngIf="publication_description_error_alert_msg"
             [dismissible]="true"
             type="danger"
-          >{{ publication_description_error_message }}</alert
+            >{{ publication_description_error_message }}</alert
           >
           <!-- Submit button -->
           <div class="col d-flex justify-content-start">
