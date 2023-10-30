@@ -8,9 +8,7 @@
  - Technologies Used: Angular and Asp.net web api
   
 # Mentor Mind Links
-- Go to the given link to see the progress of the project https://angular-64278.web.app/
-- To visit student dashboard https://angular-64278.web.app/student
-- To visit student mentor dashboard https://angular-64278.web.app/student-mentor
+- Go to the given link to see the progress of the project https://6539e4497308110008de4790--incredible-tapioca-665099.netlify.app/
 # Here are some screenshots of the project
 - ## Home page
   - Banner : ![banner](https://github.com/bishal158/MentorMind/assets/67275108/2d77fcc2-4cdb-4f30-9d18-421fd942e84a)
