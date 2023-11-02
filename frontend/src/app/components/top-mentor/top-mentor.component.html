@@ -11,7 +11,7 @@
           pagination="true"
           pagination-clickable="true"
         >
-          <swiper-slide *ngFor="let topmentor of topMentors" class="d-flex justify-content-center mb-4 p-3">
+          <swiper-slide  class="d-flex justify-content-center mb-4 p-3">
             <div class="card">
               <div class="image-content">
                 <span class="overly"></span>
@@ -19,12 +19,12 @@
                   <img
                     alt=""
                     class="card-img"
-                    src="{{topmentor.image}}"
+                    src="/assets/images/top-mentors/mentor.jpg"
                   />
                 </div>
               </div>
               <div class="card-content">
-                <h2 class="name">{{topmentor.name}}</h2>
+                <h2 class="name">Mafuj Ahmed Bishal</h2>
                 <rating
                   [(ngModel)]="rate"
                   [max]="max"
@@ -38,8 +38,76 @@
                   [readonly]="isReadonly"
                   class="text-start"
                 ></rating>
-                <p class="description">{{topmentor.subject}}</p>
-                <button class="button" routerLink="/student-mentor-info">
+                <p class="description">Web Programming</p>
+                <button class="button" routerLink="">
+                  View Profile
+                </button>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide  class="d-flex justify-content-center mb-4 p-3">
+            <div class="card">
+              <div class="image-content">
+                <span class="overly"></span>
+                <div class="card-image">
+                  <img
+                    alt=""
+                    class="card-img"
+                    src="/assets/images/top-mentors/mentor.jpg"
+                  />
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">Tasdid Alam</h2>
+                <rating
+                  [(ngModel)]="rate"
+                  [max]="max"
+                  [ngClass]="{
+                    very_poor: rate >= 0 && rate <= 2,
+                    poor: rate > 2 && rate <= 4,
+                    fair: rate > 4 && rate <= 6,
+                    good: rate > 6 && rate <= 8,
+                    excellent: rate > 8 && rate <= 10
+                  }"
+                  [readonly]="isReadonly"
+                  class="text-start"
+                ></rating>
+                <p class="description">Algorithm</p>
+                <button class="button" routerLink="">
+                  View Profile
+                </button>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide  class="d-flex justify-content-center mb-4 p-3">
+            <div class="card">
+              <div class="image-content">
+                <span class="overly"></span>
+                <div class="card-image">
+                  <img
+                    alt=""
+                    class="card-img"
+                    src="/assets/images/top-mentors/mentor.jpg"
+                  />
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">Mehedi Hasan Shawon</h2>
+                <rating
+                  [(ngModel)]="rate"
+                  [max]="max"
+                  [ngClass]="{
+                    very_poor: rate >= 0 && rate <= 2,
+                    poor: rate > 2 && rate <= 4,
+                    fair: rate > 4 && rate <= 6,
+                    good: rate > 6 && rate <= 8,
+                    excellent: rate > 8 && rate <= 10
+                  }"
+                  [readonly]="isReadonly"
+                  class="text-start"
+                ></rating>
+                <p class="description">Data Structure</p>
+                <button class="button" routerLink="">
                   View Profile
                 </button>
               </div>
