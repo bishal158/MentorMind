@@ -8,7 +8,7 @@
  - Technologies Used: Angular and Asp.net web api
   
 # Mentor Mind Links
-- Go to the given link to see the progress of the project https://6539e4497308110008de4790--incredible-tapioca-665099.netlify.app/
+- Go to the given link to see the progress of the project https://6543c12da7f08c00081c3010--dazzling-tiramisu-83b51b.netlify.app/
 # Here are some screenshots of the project
 - ## Home page
   - Banner : ![banner](https://github.com/bishal158/MentorMind/assets/67275108/2d77fcc2-4cdb-4f30-9d18-421fd942e84a)
