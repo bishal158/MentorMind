@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about-form',
@@ -90,4 +90,6 @@ export class AboutFormComponent {
     let limit = this.limit;
     counter.textContent = 0 + '/' + limit;
   }
+
+  protected readonly faSave = faSave;
 }

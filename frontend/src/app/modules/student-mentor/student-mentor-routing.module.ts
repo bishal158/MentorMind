@@ -9,6 +9,10 @@ import { WatchOthersBlogsComponent } from './components/watch-others-blogs/watch
 import { ShareResourcesFormComponent } from './components/share-resources-form/share-resources-form.component';
 import { ShowFullBlogComponent } from './components/show-full-blog/show-full-blog.component';
 import { AllMenteesComponent } from './components/all-mentees/all-mentees.component';
+import { AllYourCoursesComponent } from './components/all-your-courses/all-your-courses.component';
+import { CreateNewCoursesComponent } from './components/create-new-courses/create-new-courses.component';
+import { WatchOthersCoursesComponent } from './components/watch-others-courses/watch-others-courses.component';
+import { DesignYourCourseComponent } from './components/design-your-course/design-your-course.component';
 
 const routes: Routes = [
   {
@@ -26,6 +30,10 @@ const routes: Routes = [
       { path: 'share-resources', component: ShareResourcesFormComponent },
       { path: 'show-full-blog', component: ShowFullBlogComponent },
       { path: 'all-mentees', component: AllMenteesComponent },
+      { path: 'all-your-courses', component: AllYourCoursesComponent },
+      { path: 'create-new-courses', component: CreateNewCoursesComponent },
+      { path: 'watch-others-courses', component: WatchOthersCoursesComponent },
+      { path: 'design-course', component: DesignYourCourseComponent },
     ],
   },
 ];

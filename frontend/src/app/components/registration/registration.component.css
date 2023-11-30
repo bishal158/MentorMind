@@ -7,7 +7,7 @@ p,small{
 
 /*Login*/
 .box-aria{
-    width: 80%;
+    width: 100%;
 }
 
 /*Logo Side*/
@@ -58,11 +58,7 @@ a:link{
     transform: translateY(-2px);
 }
 
-@media (min-width: 768px) {
-.login-button {
-    padding: 10px 30px;
-}
-}
+
 .logo h3 {
     color: black;
     font-family: Arial, Helvetica, sans-serif;

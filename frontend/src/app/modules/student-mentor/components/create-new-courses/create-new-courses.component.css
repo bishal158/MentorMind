@@ -80,3 +80,77 @@ a:link{
 .error{
   border: 1px solid red;
 }
+/*--thank you pop starts here--*/
+.thank-you-pop{
+  width:100%;
+  padding:20px;
+  text-align:center;
+}
+.thank-you-pop fa-icon{
+  font-size: 70px;
+  margin: 0 auto 25px;
+  color: #8e0bd4;
+
+}
+
+.thank-you-pop h1{
+  font-size: 42px;
+  margin-bottom: 25px;
+  color:#5C5C5C;
+}
+.thank-you-pop p{
+  font-size: 20px;
+  margin-bottom: 27px;
+  color:#5C5C5C;
+}
+.thank-you-pop h3.cupon-pop{
+  font-size: 25px;
+  margin-bottom: 40px;
+  color:#222;
+  text-align:center;
+  padding:10px 20px;
+  border:2px dashed #222;
+  clear:both;
+  font-weight:normal;
+}
+.thank-you-pop h3.cupon-pop span{
+  color:#03A9F4;
+}
+.thank-you-pop a{
+  display: inline-block;
+  margin: 0 auto;
+  padding: 9px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #8BC34A;
+  border-radius: 17px;
+}
+.thank-you-pop a i{
+  margin-right:5px;
+  color:#fff;
+}
+#myModal .modal-header{
+  border:0;
+}
+.modal-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-top:0;
+  padding: 5px;
+}
+.modal-footer button{
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: #8e0bd4;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.modal{
+  background-color: rgba(8, 8, 8, 0.2);
+  box-shadow: 0 45px 65px rgba(234, 234, 234, 0.5), 0 35px 22px rgba(255, 255, 255, 0.16);
+
+}

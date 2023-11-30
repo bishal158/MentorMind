@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faBriefcase,
   faCircleCheck,
@@ -164,7 +165,10 @@ export class RegistrationComponent implements OnInit {
   protected readonly faCircleCheck = faCircleCheck;
 
   //constructor for form builder
-  constructor(private formbuilder: FormBuilder) {}
+  constructor(
+    private formbuilder: FormBuilder,
+    private route: Router,
+  ) {}
 
   view1() {
     this.password_visiable = !this.password_visiable;

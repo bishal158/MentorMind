@@ -1,58 +1,130 @@
-<div class="main-container d-flex  justify-content-center align-items-center mt-4 ">
+<div
+  class="main-container d-flex justify-content-center align-items-center mt-4"
+>
   <!--Login-->
   <div class="row border rounded-3 p-5 bg-white shadow box-aria">
     <!--Logo Side-->
-    <div class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side">
+    <div
+      class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side"
+    >
       <!--Logo Div-->
       <div class="logo mb-6 p-3">
-        <img alt="Register" class="img-fluid" src="/assets/images/Update.gif">
+        <img
+          alt="Register"
+          class="img-fluid"
+          src="assets/images/others/Update.gif"
+        />
       </div>
     </div>
     <!--Form Side-->
     <div class="col-md-6">
-      <h3 class="text-center text-light rounded-1 mb-2 p-2" style="background-color: #8400c4;">Update Your
-        Information</h3>
-      <form (ngSubmit)=" update_information.status !=='INVALID' && update()" [formGroup]="update_information"
-            class="col lg-3">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Update Your Information
+      </h3>
+      <form
+        (ngSubmit)="update_information.status !== 'INVALID' && update()"
+        [formGroup]="update_information"
+        class="col lg-3"
+      >
         <!--UserName-->
         <label class="form-label" for="fullname">Full Name</label>
         <div class="input-group mb-2">
-                  <span class="input-group-text bg-white " id="Username-icon">
-                    <fa-icon [icon]="faUser" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
-                  </span>
-          <input [ngClass]="{error: getControl('fullname')?.errors && getControl('fullname')?.touched}" class="form-control" formControlName="fullname" id="fullname" name="fullname"
-                 placeholder="Maximum 20 character"
-                 type="text">
+          <span class="input-group-text bg-white" id="Username-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('fullname')?.errors &&
+                getControl('fullname')?.touched
+            }"
+            class="form-control"
+            formControlName="fullname"
+            id="fullname"
+            name="fullname"
+            placeholder="Maximum 20 character"
+            type="text"
+          />
         </div>
         <!--Username error message-->
-        <alert *ngIf="fullname_error_alert_msg" [dismissible]="true" type="danger">{{fullname_error_message}}</alert>
+        <alert
+          *ngIf="fullname_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ fullname_error_message }}</alert
+        >
         <!--Email-->
         <label class="form-label" for="email">Email</label>
         <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Email-icon">
-            <fa-icon [icon]="faEnvelope" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          <span class="input-group-text bg-white" id="Email-icon">
+            <fa-icon
+              [icon]="faEnvelope"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
           </span>
-          <input [ngClass]="{error: getControl('email')?.errors && getControl('email')?.touched}" class="form-control" formControlName="email" id="email" name="email"
-                 placeholder="abc@gmail.com"
-                 type="email">
+          <input
+            [ngClass]="{
+              error: getControl('email')?.errors && getControl('email')?.touched
+            }"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            name="email"
+            placeholder="abc@gmail.com"
+            type="email"
+          />
         </div>
         <!--Email error message-->
-        <alert *ngIf="email_error_alert_msg" [dismissible]="true" type="danger">{{email_error_message}}</alert>
+        <alert
+          *ngIf="email_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ email_error_message }}</alert
+        >
         <!--Contact Number-->
         <label class="form-label" for="phone">Contact Number</label>
         <div class="input-group mb-2">
-          <span class="input-group-text bg-white " id="Phone-icon">
-            <fa-icon [icon]="faPhone" class="fa-flip fa-lg" style="color: #8400c4;"></fa-icon>
+          <span class="input-group-text bg-white" id="Phone-icon">
+            <fa-icon
+              [icon]="faPhone"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
           </span>
-          <input [ngClass]="{error: getControl('phone')?.errors && getControl('phone')?.touched}" class="form-control" formControlName="phone" id="phone" name="phone"
-                 placeholder="Must be 11 digits"
-                 type="tel">
+          <input
+            [ngClass]="{
+              error: getControl('phone')?.errors && getControl('phone')?.touched
+            }"
+            class="form-control"
+            formControlName="phone"
+            id="phone"
+            name="phone"
+            placeholder="Must be 11 digits"
+            type="tel"
+          />
         </div>
         <!--Phone error message-->
-        <alert *ngIf="phone_error_alert_msg" [dismissible]="true" type="danger">{{phone_error_message}}</alert>
+        <alert
+          *ngIf="phone_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ phone_error_message }}</alert
+        >
         <!-- Submit button -->
         <div class="col d-flex justify-content-center">
-          <button [disabled]="update_information.status === 'INVALID' " class=" login-button w-100 mb-3" type="submit">
+          <button
+            [disabled]="update_information.status === 'INVALID'"
+            class="login-button w-100 mb-3"
+            type="submit"
+          >
             Save
           </button>
         </div>

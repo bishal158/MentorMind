@@ -41,8 +41,8 @@
 
 #side_nav {
   background: #003147;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 350px;
+  max-width: 350px;
 
 }
 
@@ -142,4 +142,10 @@
 .back_to_top fa-icon {
   font-size: 20px;
   margin: 2px;
+}
+
+.active-link{
+  border: 1px solid #8400c4;
+  background-color: #8400c4;
+  border-radius: 5px;
 }

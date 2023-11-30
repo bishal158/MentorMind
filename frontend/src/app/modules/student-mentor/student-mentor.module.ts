@@ -26,6 +26,10 @@ import { ShareResourcesFormComponent } from './components/share-resources-form/s
 import { ShowFullBlogComponent } from './components/show-full-blog/show-full-blog.component';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 import { AllMenteesComponent } from './components/all-mentees/all-mentees.component';
+import { AllYourCoursesComponent } from './components/all-your-courses/all-your-courses.component';
+import { CreateNewCoursesComponent } from './components/create-new-courses/create-new-courses.component';
+import { WatchOthersCoursesComponent } from './components/watch-others-courses/watch-others-courses.component';
+import { DesignYourCourseComponent } from './components/design-your-course/design-your-course.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { AllMenteesComponent } from './components/all-mentees/all-mentees.compon
     ShareResourcesFormComponent,
     ShowFullBlogComponent,
     AllMenteesComponent,
+    AllYourCoursesComponent,
+    CreateNewCoursesComponent,
+    WatchOthersCoursesComponent,
+    DesignYourCourseComponent,
   ],
   imports: [
     CommonModule,

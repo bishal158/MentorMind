@@ -26,4 +26,6 @@ export class ShowCoursesComponent {
   protected readonly faUser = faUser;
   protected readonly faEye = faEye;
   protected readonly faBook = faBook;
+
+  content = '<p><em><strong>abc</strong></em></p>';
 }

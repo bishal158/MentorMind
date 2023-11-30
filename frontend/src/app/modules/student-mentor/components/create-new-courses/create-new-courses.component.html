@@ -1,0 +1,141 @@
+<div
+  class="main-container d-flex justify-content-center align-items-center mt-4"
+>
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div
+      class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side"
+    >
+      <!--Logo Div-->
+      <div class="logo mb-6 p-3">
+        <img
+          alt="Create Course"
+          class="img-fluid"
+          src="assets/images/others/Learning.gif"
+        />
+      </div>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Create New Course
+      </h3>
+      <form
+        (ngSubmit)="
+          create_new_course_form.status !== 'INVALID' && create_new_course()
+        "
+        [formGroup]="create_new_course_form"
+        class="col lg-3"
+      >
+        <!--Course Name-->
+        <label class="form-label" for="course_name">Course Name</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Course_name-icon">
+            <fa-icon
+              [icon]="faBuildingColumns"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('course_name')?.errors &&
+                getControl('course_name')?.touched
+            }"
+            class="form-control"
+            formControlName="course_name"
+            id="course_name"
+            name="course_name"
+            placeholder="Name of the course"
+            type="text"
+          />
+        </div>
+        <!--course_name error message-->
+        <alert
+          *ngIf="course_name_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ course_name_error_message }}</alert
+        >
+
+        <!--course_description-->
+        <label class="form-label" for="course_description"
+          >Course Description</label
+        >
+        <div class="input-group mb-2">
+          <textarea
+            type="text"
+            class="form-control"
+            placeholder="Write Your Message Here"
+            rows="15"
+            cols="15"
+            id="course_description"
+            name="course_description"
+            formControlName="course_description"
+            [ngClass]="{
+              error:
+                getControl('course_description')?.errors &&
+                getControl('course_description')?.touched
+            }"
+          ></textarea>
+        </div>
+        <p id="counter"></p>
+        <!--About error message-->
+        <alert
+          [dismissible]="true"
+          type="danger"
+          class="text-danger"
+          *ngIf="course_description_error_alert_msg"
+          >{{ course_description_error_message }}</alert
+        >
+
+        <!-- Submit button -->
+        <div class="col d-flex justify-content-start">
+          <button
+            [disabled]="create_new_course_form.status === 'INVALID'"
+            class="login-button w-100 mb-3"
+            type="submit"
+            (click)="open_success_modal()"
+          >
+            Create new Course
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--success message modal popup 1-->
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button
+          (click)="close_success_modal()"
+          class="btn btn-close"
+          type="button"
+        ></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="thank-you-pop">
+          <fa-icon [icon]="faFolderPlus" class="fa-beat-fade"></fa-icon>
+          <h1>Done!!</h1>
+          <p>Course Created Successfully .....</p>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button (click)="go_to_your_course()" type="button">
+          Go to your courses
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

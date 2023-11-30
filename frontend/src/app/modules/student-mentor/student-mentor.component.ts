@@ -5,6 +5,8 @@ import {
   faBars,
   faBarsStaggered,
   faBlog,
+  faBook,
+  faPlus,
   faEnvelope,
   faEye,
   faGear,
@@ -37,7 +39,8 @@ import { ViewportScroller } from '@angular/common';
 })
 export class StudentMentorComponent implements OnInit {
   isCollapsed = false;
-  open_inner_item = true;
+  open_course_inner_item = true;
+  open_blogs_inner_item = true;
   windowScrolled = false;
   protected readonly faBars = faBars;
   protected readonly faShareFromSquare = faShareFromSquare;
@@ -64,6 +67,8 @@ export class StudentMentorComponent implements OnInit {
   protected readonly faUsers = faUsers;
   protected readonly faUsersViewfinder = faUsersViewfinder;
   protected readonly faArrowUp = faArrowUp;
+  protected readonly faBook = faBook;
+  protected readonly faPlus = faPlus;
 
   constructor(private scroller: ViewportScroller) {}
 

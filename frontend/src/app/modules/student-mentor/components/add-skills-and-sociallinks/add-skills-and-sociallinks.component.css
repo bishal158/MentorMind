@@ -37,7 +37,7 @@ a:link{
 
 .login-button{
   background-color: #8400c4;
-  border: 1px solid #8400c4;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
   box-sizing: border-box;
@@ -56,8 +56,11 @@ a:link{
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+.login-button:disabled{
+  background-color: #d3b5da;
+}
 
-.login-button:hover {
+.login-button:enabled:hover {
   box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
   transform: translateY(-2px);
 }

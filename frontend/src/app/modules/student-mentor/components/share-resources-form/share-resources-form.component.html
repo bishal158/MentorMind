@@ -11,7 +11,7 @@
         <img
           alt="Register"
           class="img-fluid"
-          src="/assets/images/Studying.gif"
+          src="assets/images/others/Studying.gif"
         />
       </div>
     </div>
@@ -55,9 +55,8 @@
           *ngIf="topic_error_alert_msg"
           [dismissible]="true"
           type="danger"
-        >{{ topic_error_message }}</alert
+          >{{ topic_error_message }}</alert
         >
-
 
         <!--Topic Document-->
         <label class="form-label" for="topic_document">Topic Document</label>
@@ -71,7 +70,9 @@
           </span>
           <input
             [ngClass]="{
-              error: getControl('topic_document')?.errors && getControl('topic_document')?.touched
+              error:
+                getControl('topic_document')?.errors &&
+                getControl('topic_document')?.touched
             }"
             class="form-control"
             formControlName="topic_document"
@@ -86,12 +87,12 @@
           *ngIf="topic_document_error_alert_msg"
           [dismissible]="true"
           type="danger"
-        >{{ topic_document_error_message }}</alert
+          >{{ topic_document_error_message }}</alert
         >
 
         <!--resource_description-->
         <label class="form-label" for="resource_description"
-        >Resource Description</label
+          >Resource Description</label
         >
         <div class="input-group mb-1">
           <textarea
@@ -116,7 +117,7 @@
           *ngIf="resource_description_error_alert_msg"
           [dismissible]="true"
           type="danger"
-        >{{ resource_description_error_message }}</alert
+          >{{ resource_description_error_message }}</alert
         >
         <!-- Submit button -->
         <div class="col d-flex justify-content-start">

@@ -13,19 +13,19 @@
       </button>
     </div>
     <ul class="list-unstyled px-2">
-      <li class="nav-list-item">
+      <li class="nav-list-item" routerLinkActive="active-link">
         <fa-icon [icon]="faUser"></fa-icon>
         <span>
           <a routerLink="/student-mentor/student-mentor-about">Profile</a>
         </span>
       </li>
-      <li class="nav-list-item">
+      <li class="nav-list-item" routerLinkActive="active-link">
         <fa-icon [icon]="faUsersViewfinder"></fa-icon>
         <span>
           <a routerLink="/student-mentor/all-mentees">All my mentees</a>
         </span>
       </li>
-      <li class="nav-list-item">
+      <li class="nav-list-item"  routerLinkActive="active-link">
         <fa-icon [icon]="faGear"></fa-icon>
         <span>
           <a routerLink="/student-mentor/student-mentor-account-settings"
@@ -33,30 +33,31 @@
           >
         </span>
       </li>
+      <!-- blogs section -->
       <li class="nav-list-item">
         <fa-icon [icon]="faBlog"></fa-icon>
         <span>
           <a
-            (click)="open_inner_item = !open_inner_item"
-            [attr.aria-expanded]="!open_inner_item"
-            aria-controls="open_inner_item"
+            (click)="open_blogs_inner_item = !open_blogs_inner_item"
+            [attr.aria-expanded]="!open_blogs_inner_item"
+            aria-controls="open_blogs_inner_item"
             type="button"
-            >Your Blogs</a
+            >Blogs</a
           >
         </span>
         <ul
-          [collapse]="open_inner_item"
-          [isAnimated]="open_inner_item"
+          [collapse]="open_blogs_inner_item"
+          [isAnimated]="open_blogs_inner_item"
           class="inner-item list-unstyled px-2"
-          id="open_inner_item"
+          id="open_blogs_inner_item"
         >
-          <li class="inner-item-list">
+          <li class="inner-item-list" routerLinkActive="active-link">
             <fa-icon [icon]="faReplyAll"></fa-icon>
             <span>
-              <a routerLink="/student-mentor/all-your-blogs">All Your Blogs</a>
+              <a routerLink="/student-mentor/all-your-blogs">Your Blogs</a>
             </span>
           </li>
-          <li class="inner-item-list">
+          <li class="inner-item-list" routerLinkActive="active-link">
             <fa-icon [icon]="faPenToSquare"></fa-icon>
             <span>
               <a routerLink="/student-mentor/write-your-blogs"
@@ -64,7 +65,7 @@
               >
             </span>
           </li>
-          <li class="inner-item-list">
+          <li class="inner-item-list" routerLinkActive="active-link">
             <fa-icon [icon]="faEye"></fa-icon>
             <span>
               <a routerLink="/student-mentor/watch-others-blogs"
@@ -74,7 +75,41 @@
           </li>
         </ul>
       </li>
-      <li class="nav-list-item">
+      <!-- courses section -->
+      <li class="nav-list-item" >
+        <fa-icon [icon]="faBook"></fa-icon>
+        <span>
+          <a
+            (click)="open_course_inner_item = !open_course_inner_item"
+            [attr.aria-expanded]="!open_course_inner_item"
+            aria-controls="open_course_inner_item"
+            type="button"
+            >Courses</a
+          >
+        </span>
+        <ul
+          [collapse]="open_course_inner_item"
+          [isAnimated]="open_course_inner_item"
+          class="inner-item list-unstyled px-2"
+          id="open_course_inner_item"
+        >
+          <li class="inner-item-list" routerLinkActive="active-link" >
+            <fa-icon [icon]="faReplyAll"></fa-icon>
+            <span>
+              <a routerLink="/student-mentor/all-your-courses">Your Courses</a>
+            </span>
+          </li>
+          <li class="inner-item-list" routerLinkActive="active-link">
+            <fa-icon [icon]="faEye"></fa-icon>
+            <span>
+              <a routerLink="/student-mentor/watch-others-courses"
+                >Watch Other's Courses</a
+              >
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-list-item" routerLinkActive="active-link">
         <fa-icon [icon]="faSquareShareNodes"></fa-icon>
         <span>
           <a routerLink="/student-mentor/share-resources">Share Resources</a>
