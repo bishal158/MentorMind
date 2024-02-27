@@ -1,0 +1,435 @@
+<!--Navbar-->
+<app-navbar></app-navbar>
+<!--Registration Form-->
+<div class="container d-flex justify-content-center align-items-center mt-3">
+  <!--Registration-->
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div
+      class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side"
+    >
+      <!--Logo Div-->
+      <div class="logo">
+        <img
+          alt="Register"
+          class="img-fluid"
+          src="assets/images/Registration-images/Registration1.gif"
+        />
+      </div>
+      <h6 class="text-center mb-2 mt-2" style="color: #566fb2">
+        Create An Account
+      </h6>
+      <p class="text-center mt-2" style="color: #7e95ef">Run For Your Dreams</p>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Register Your Account
+      </h3>
+      <form
+        (ngSubmit)="registrationForm.status !== 'INVALID' && registered()"
+        [formGroup]="registrationForm"
+        class="col lg-3"
+      >
+        <!--Fullname-->
+        <label class="form-label" for="fullname">Fullname</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Fullname-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('fullname')?.errors &&
+                getControl('fullname')?.touched
+            }"
+            class="form-control"
+            formControlName="fullname"
+            id="fullname"
+            name="fullname"
+            placeholder="Ex:-'Mafuj Bishal' must be 8-20 character"
+            type="text"
+          />
+        </div>
+        <!--Fullname error message-->
+        <alert
+          *ngIf="fullname_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ fullname_error_message }}</alert
+        >
+
+        <!--UserName-->
+        <label class="form-label" for="username">Username</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Username-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('username')?.errors &&
+                getControl('username')?.touched
+            }"
+            class="form-control"
+            formControlName="username"
+            id="username"
+            name="username"
+            placeholder="Ex:-'abc234' must be 8-20 character"
+            type="text"
+          />
+        </div>
+        <!--Username error message-->
+        <alert
+          *ngIf="username_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ username_error_message }}</alert
+        >
+
+        <!--Profile Picture-->
+        <label class="form-label" for="profile_picture">Profile Picture</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Profile-Picture-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('profile_picture')?.errors &&
+                getControl('profile_picture')?.touched
+            }"
+            class="form-control"
+            formControlName="profile_picture"
+            id="profile_picture"
+            name="profile_picture"
+            type="file"
+          />
+        </div>
+        <!--Profile Picture error message-->
+        <alert
+          *ngIf="profile_picture_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ profile_picture_error_message }}</alert
+        >
+
+        <!--Student-Id-->
+        <label class="form-label" for="studentid">Student Id</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Student-Id-icon">
+            <fa-icon
+              [icon]="faIdCard"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('studentid')?.errors &&
+                getControl('studentid')?.touched
+            }"
+            class="form-control"
+            formControlName="studentid"
+            id="studentid"
+            name="studentid"
+            placeholder="Ex:-201002158"
+            type="number"
+          />
+        </div>
+        <!--Studentid error message-->
+        <alert
+          *ngIf="studentid_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ studentid_error_message }}</alert
+        >
+        <!--Email-->
+        <label class="form-label" for="email">Email</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Email-icon">
+            <fa-icon
+              [icon]="faEnvelope"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error: getControl('email')?.errors && getControl('email')?.touched
+            }"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            name="email"
+            placeholder="Ex:-abc@gmail.com"
+            type="email"
+          />
+        </div>
+        <!--Email error message-->
+        <alert
+          *ngIf="email_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ email_error_message }}</alert
+        >
+        <!--Role-->
+        <label class="form-label" for="role">Role</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Role-icon">
+            <fa-icon
+              [icon]="faBriefcase"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <select
+            [ngClass]="{
+              error: getControl('role')?.errors && getControl('role')?.touched
+            }"
+            class="form-select"
+            formControlName="role"
+            id="role"
+            name="role"
+          >
+            <option
+              *ngFor="let option of role_options"
+              value="{{ option.value }}"
+            >
+              {{ option.options }}
+            </option>
+          </select>
+        </div>
+        <!--Role error message-->
+        <alert
+          *ngIf="role_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ role_error_message }}</alert
+        >
+        <!--Subject-->
+        <label *ngIf="show_field" class="form-label" for="subject"
+          >Choose Subject</label
+        >
+        <div *ngIf="show_field" class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Subject-icon">
+            <fa-icon
+              [icon]="faBriefcase"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <select
+            [ngClass]="{
+              error:
+                getControl('subject')?.errors && getControl('subject')?.touched
+            }"
+            class="form-select"
+            formControlName="subject"
+            id="subject"
+            name="subject"
+          >
+            <option
+              *ngFor="let subject of subject_options"
+              value="{{ subject.value }}"
+            >
+              {{ subject.name }}
+            </option>
+          </select>
+        </div>
+        <!--Subject error message-->
+        <alert
+          *ngIf="subject_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ subject_error_message }}</alert
+        >
+        <!--About-->
+        <label class="form-label" for="about">About</label>
+        <div class="input-group mb-1">
+          <textarea
+            [ngClass]="{
+              error: getControl('about')?.errors && getControl('about')?.touched
+            }"
+            class="form-control"
+            cols="5"
+            formControlName="about"
+            id="about"
+            name="about"
+            placeholder="Write Your Message Here"
+            rows="5"
+            type="text"
+          ></textarea>
+        </div>
+        <p id="about_counter"></p>
+        <!--About error message-->
+        <alert
+          *ngIf="about_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ about_error_message }}</alert
+        >
+        <!-- Password input -->
+        <label class="form-label" for="password">Password</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Password-icon1">
+            <fa-icon
+              [icon]="fakey"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('password')?.errors &&
+                getControl('password')?.touched
+            }"
+            [type]="password_changetype ? 'password' : 'text'"
+            class="form-control"
+            formControlName="password"
+            id="password"
+            name="password"
+            placeholder="Minimum 8-32 Ab12.+-/*@#$! etc"
+          />
+          <span
+            (click)="view1()"
+            class="input-group-text bg-white"
+            id="Password-icon2"
+          >
+            <fa-icon *ngIf="password_visiable" [icon]="faEyeSlash"></fa-icon>
+            <fa-icon *ngIf="!password_visiable" [icon]="faEye"></fa-icon>
+          </span>
+        </div>
+        <!-- Password error message -->
+        <alert
+          *ngIf="password_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ password_error_message }}</alert
+        >
+        <!--Confirm Password-->
+        <label class="form-label" for="confirmpassword">Confirm password</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-white" id="Password-icon3">
+            <fa-icon
+              [icon]="fakey"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            >
+            </fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('confirmpassword')?.errors &&
+                getControl('confirmpassword')?.touched
+            }"
+            [type]="confirm_password_changetype ? 'password' : 'text'"
+            class="form-control"
+            formControlName="confirmpassword"
+            id="confirmpassword"
+            name="confirmpassword"
+            placeholder="Minimum 8-32 Ab12.+-/*@#$! etc"
+          />
+          <span
+            (click)="view2()"
+            class="input-group-text bg-white"
+            id="Password-icon4"
+          >
+            <fa-icon
+              *ngIf="confirm_password_visiable"
+              [icon]="faEyeSlash"
+            ></fa-icon>
+            <fa-icon
+              *ngIf="!confirm_password_visiable"
+              [icon]="faEye"
+            ></fa-icon>
+          </span>
+        </div>
+        <!-- Confirmpassword error message -->
+        <alert
+          *ngIf="confirmpassword_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ confirmpassword_error_message }}</alert
+        >
+        <alert
+          *ngIf="
+            getControl('confirmpassword')?.errors &&
+            getControl('confirmpassword')?.errors?.['Mustmatch']
+          "
+          [dismissible]="true"
+          type="danger"
+        >
+          Mismatched Password
+        </alert>
+        <div class="col d-flex justify-content-center">
+          <button
+            (click)="open_success_modal()"
+            [disabled]="registrationForm.status === 'INVALID'"
+            class="login-button w-100 mb-3"
+            type="submit"
+          >
+            Register
+          </button>
+        </div>
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>
+            Already Have an Account?
+            <a class="" routerLink="/login">Login Here</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+<!--success message modal popup 1-->
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button
+          (click)="close_success_modal()"
+          class="btn btn-close"
+          type="button"
+        ></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="thank-you-pop">
+          <fa-icon [icon]="faCircleCheck" class="fa-beat-fade"></fa-icon>
+          <h1>Thank You!</h1>
+          <p>Successfully Registered.....</p>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <a routerLink="/login">
+          <button (click)="close_success_modal()" type="button">OK!!!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

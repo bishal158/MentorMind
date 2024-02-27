@@ -1,0 +1,159 @@
+<h4 class="header">
+  <div class="text-blur-out">Write Blogs Here!!!!!</div>
+</h4>
+<div class="container-fluid d-flex justify-content-start align-items-center">
+  <div class="row">
+    <div class="col-md-8">
+      <form
+        (ngSubmit)="
+          write_blogs_form.status !== 'INVALID' &&
+            submit(write_blogs_form.value)
+        "
+        [formGroup]="write_blogs_form"
+      >
+        <!--Blog Title-->
+        <label class="form-label" for="blog_title">Give Title</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('blog_title')?.errors &&
+                getControl('blog_title')?.touched
+            }"
+            class="form-control"
+            formControlName="blog_title"
+            id="blog_title"
+            name="blog_title"
+            placeholder="Maximum 20 character"
+            type="text"
+          />
+        </div>
+        <!--Blog Tittle error message-->
+        <alert
+          *ngIf="blog_title_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ blog_title_error_message }}</alert
+        >
+
+        <!--Blog Cover Photo-->
+        <label class="form-label" for="blog_cover_image">Cover Photo</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faImage"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('blog_cover_image')?.errors &&
+                getControl('blog_cover_image')?.touched
+            }"
+            class="form-control"
+            formControlName="blog_cover_image"
+            id="blog_cover_image"
+            multiple
+            name="blog_cover_image"
+            placeholder="Add a Cover Photo"
+            type="file"
+          />
+        </div>
+        <!--Blog Cover Photo error message-->
+        <alert
+          *ngIf="blog_cover_image_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ blog_cover_image_error_message }}</alert
+        >
+
+        <!--Blog Description-->
+        <label class="form-label" for="blog_description"
+          >Give Short Description</label
+        >
+        <div class="input-group mb-3">
+          <textarea
+            [ngClass]="{
+              error:
+                getControl('blog_description')?.errors &&
+                getControl('blog_description')?.touched
+            }"
+            class="form-control"
+            cols="10"
+            formControlName="blog_description"
+            id="blog_description"
+            name="blog_description"
+            placeholder="Add a blog_description"
+            rows="10"
+            type="text"
+          >
+          </textarea>
+        </div>
+        <p id="description_counter"></p>
+        <!--Blog Cover Photo error message-->
+        <alert
+          *ngIf="blog_description_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ blog_description_error_message }}</alert
+        >
+        <!--Text editor-->
+        <span class="mx-1"><fa-icon [icon]="faPenToSquare"></fa-icon></span>
+        <label class="form-label" for="text_editor"
+          >Write Your Blogs Here</label
+        >
+        <div class="input-group mb-2">
+          <editor
+            [init]="text_editor_tools"
+            [ngClass]="{
+              error:
+                getControl('text_editor')?.errors &&
+                getControl('text_editor')?.touched
+            }"
+            formControlName="text_editor"
+            id="text_editor"
+          >
+          </editor>
+        </div>
+        <!--Text editor error message-->
+        <alert
+          *ngIf="text_editor_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+          >{{ text_editor_error_message }}</alert
+        >
+        <div class="col d-flex justify-content-start">
+          <button
+            [disabled]="write_blogs_form.status === 'INVALID'"
+            class="login-button w-25 mb-3"
+            type="submit"
+          >
+            Post
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <div class="image">
+        <img
+          alt="..."
+          class="img-fluid"
+          src="assets/images/Blogs-card/writing_blog.svg"
+        />
+        <p class="text-dark mt-2">Text Editor Rules:</p>
+        <ul>
+          <li>To add Photo Just Drag and Drop</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

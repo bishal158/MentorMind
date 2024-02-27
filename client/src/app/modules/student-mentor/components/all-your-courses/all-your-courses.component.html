@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary mt-4">
+  <div class="container-fluid">
+    <form class="d-flex p-1 gap-2" role="search" style="width: 100%">
+      <div class="input-group justify-content-start">
+        <span class="p-2" type="button">
+          <fa-icon [icon]="faFilter"></fa-icon>
+        </span>
+        <select class="form-select" id="category">
+          <option selected>Category</option>
+          <option>Database management System</option>
+          <option>Data Structure</option>
+          <option>Algorithm</option>
+          <option>Database management System</option>
+          <option>Data Structure</option>
+          <option>Algorithm</option>
+        </select>
+      </div>
+      <div class="input-group justify-content-end">
+        <input
+          aria-label="Search"
+          class="form-control"
+          placeholder="Search"
+          type="search"
+        />
+        <span class="p-2" type="button">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </span>
+      </div>
+    </form>
+  </div>
+</nav>
+<h4 class="header">
+  <div class="text-blur-out">Read Blogs-"Increase Your Knowledge"</div>
+</h4>
+<a routerLink="/student-mentor/create-new-courses" class="btn create-course">
+  <fa-icon class="mx-1" [icon]="faCirclePlus"></fa-icon>Create New Courses
+</a>
+<div class="card mb-3 mt-2 swing-in-left-fwd courses" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-3">
+      <img
+        alt="..."
+        class="cover_image"
+        src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220424231007/Web-Development-Roadmap-2022.png"
+      />
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h4 class="card-title bar">Course Name</h4>
+        <p class="card-title mt-1">
+          <strong> Updated At: </strong>
+          <time>29 April,2023</time>
+        </p>
+        <p class="card-title mt-1">
+          <strong> Total Topic: </strong>
+          9
+        </p>
+        <p class="card-text mt-1">
+          <strong>Course Description:</strong>
+          salutatus proin meliore posse debet sagittis sumo porttitor mauris in
+          lobortis inimicus mentitum feugait volutpat
+        </p>
+        <p class="card-text mt-1">
+          <strong>Course Status:</strong>
+          <strong
+            [(ngModel)]="course_status"
+            ngDefaultControl
+            id="course_status"
+            class="course_status"
+            [ngClass]="{
+              status_completed: course_status === 'Completed',
+              status_inprogress: course_status === 'In Progress'
+            }"
+          >
+            {{ course_status
+            }}<fa-icon
+              [icon]="faSpinner"
+              *ngIf="course_status === 'In Progress'"
+              class="p-1"
+            ></fa-icon
+            ><fa-icon
+              [icon]="faCircleCheck"
+              *ngIf="course_status === 'Completed'"
+              class="p-1"
+            ></fa-icon>
+          </strong>
+          <!-- <button id="status-button" class="status_button"(click)="print()">Add Status</button> -->
+        </p>
+        <a
+          routerLink="/student-mentor/design-course"
+          class="edit_button"
+          *ngIf="course_status === 'In Progress'"
+          >Continue Course <fa-icon [icon]="faArrowRight" class="p-2"></fa-icon>
+        </a>
+        <a
+          routerLink=""
+          class="edit_button"
+          *ngIf="course_status === 'Completed'"
+          >Update Course <fa-icon [icon]="faPenToSquare" class="p-2"></fa-icon>
+        </a>
+        <!-- <p>Selected option: {{ selectedOption }}</p>
+      <p>Button output: {{ printedOption }}</p> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="add-topic-form shadow">
+  <form
+    (ngSubmit)="
+      add_topic_form.status !== 'INVALID' && submit(add_topic_form.value)
+    "
+    [formGroup]="add_topic_form"
+  >
+    <label class="form-label" for="topic_name">Topic Name</label>
+    <div class="input-group mb-2">
+      <span class="input-group-text bg-white">
+        <fa-icon
+          [icon]="faUser"
+          class="fa-flip fa-lg"
+          style="color: #8400c4"
+        ></fa-icon>
+      </span>
+      <input
+        [ngClass]="{
+          error:
+            getControl('topic_name')?.errors &&
+            getControl('topic_name')?.touched
+        }"
+        class="form-control"
+        formControlName="topic_name"
+        id="topic_name"
+        name="topic_name"
+        placeholder="Maximum 20 character"
+        type="text"
+      />
+    </div>
+    <!--Topic name error message-->
+    <alert
+      [dismissible]="true"
+      *ngIf="topic_name_error_msg_alert"
+      type="danger"
+      >{{ topic_name_error_msg }}</alert
+    >
+    <!--Text editor-->
+    <span class="mx-1">
+      <fa-icon [icon]="faPenToSquare"></fa-icon>
+    </span>
+    <label class="form-label" for="topic_content"
+      >Write Your Content Here</label
+    >
+    <div class="input-group mb-2">
+      <editor
+        [init]="text_editor_tools"
+        [ngClass]="{
+          error:
+            getControl('topic_content')?.errors &&
+            getControl('topic_content')?.touched
+        }"
+        formControlName="topic_content"
+        id="topic_content"
+      >
+      </editor>
+    </div>
+    <!--Text editor error message-->
+    <alert
+      *ngIf="topic_content_error_msg_alert"
+      [dismissible]="true"
+      type="danger"
+      >{{ topic_content_error_msg }}</alert
+    >
+    <div class="input-group mb-2">
+      <button
+        [disabled]="add_topic_form.status === 'INVALID'"
+        class="add-topic-button"
+        type="submit"
+      >
+        <fa-icon [icon]="faCirclePlus" class="fa-sm p-1"></fa-icon>
+        Add Topic
+      </button>
+    </div>
+  </form>
+</div>
+<!--All Topic Lists-->
+<h4
+  class="text-center d-flex justify-content-center align-items-center text-white p-2 mb-4 mt-2"
+  style="background-color: #8400c4; height: 60px"
+>
+  All Topics
+</h4>
+<div class="container-fluid all-topics-list">
+  <accordion [isAnimated]="true" *ngFor="let topic of topics">
+    <accordion-group [heading]="topic.topic_name" class="topics">
+      <a class="edit_topic_button" routerLink="">
+        <button><fa-icon [icon]="faPenToSquare"></fa-icon> Edit Topic</button>
+      </a>
+      <div [innerHTML]="topic.topic_content" class="topic-content">
+        <!--     Topic Content       -->
+      </div>
+    </accordion-group>
+  </accordion>
+</div>

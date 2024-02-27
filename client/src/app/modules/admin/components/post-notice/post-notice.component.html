@@ -1,0 +1,150 @@
+<h4 class="header">
+  <div class="text-blur-out">Post a Notice</div>
+</h4>
+<div class="notice_board_container">
+  <div class="post_notice_container">
+    <form
+      (ngSubmit)="
+          notice.status !== 'INVALID' &&
+            submit(notice.value)
+        "
+      [formGroup]="notice"
+    >
+      <!--Notice Title-->
+      <label class="form-label" for="notice_title">Notice Title</label>
+      <div class="input-group mb-2">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+        <input
+          [ngClass]="{
+              error:
+                getControl('notice_title')?.errors &&
+                getControl('notice_title')?.touched
+            }"
+          class="form-control"
+          formControlName="notice_title"
+          id="notice_title"
+          name="notice_title"
+          placeholder="Maximum 20 character"
+          type="text"
+        />
+      </div>
+      <!--Notice Tittle error message-->
+      <alert
+        *ngIf="notice_title_error_alert_msg"
+        [dismissible]="true"
+        type="danger"
+      >{{ notice_title_error_message }}</alert
+      >
+
+      <!-- Notice File-->
+      <label class="form-label" for="notice_file">Notice File</label>
+      <div class="input-group mb-3">
+          <span class="input-group-text bg-white">
+            <fa-icon
+              [icon]="faFile"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+        <input
+          [ngClass]="{
+              error:
+                getControl('notice_file')?.errors &&
+                getControl('notice_file')?.touched
+            }"
+          class="form-control"
+          formControlName="notice_file"
+          id="notice_file"
+          multiple
+          name="notice_file"
+          placeholder="Notice Documents"
+          type="file"
+        />
+      </div>
+      <!--Notice File error message-->
+      <alert
+        *ngIf="notice_file_error_alert_msg"
+        [dismissible]="true"
+        type="danger"
+      >{{ notice_file_error_message }}</alert
+      >
+
+      <!--Give Attachment-->
+      <label class="form-label" for="attachment">Add Attachment Option</label>
+      <div class="input-group mb-2">
+          <span class="input-group-text bg-white" >
+            <fa-icon
+              [icon]="faLink"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+        <select
+          [ngClass]="{
+              error: getControl('attachment')?.errors && getControl('attachment')?.touched
+            }"
+          class="form-select"
+          formControlName="attachment"
+          id="attachment"
+          name="attachment"
+        >
+          <option
+            *ngFor="let option of choose_options"
+            value="{{ option.value }}"
+          >
+            {{ option.option }}
+          </option>
+        </select>
+      </div>
+      <!--Attachment error message-->
+      <alert
+        *ngIf="attachment_error_alert_msg"
+        [dismissible]="true"
+        type="danger"
+      >{{ attachment_error_message }}</alert
+      >
+      <!--Text editor-->
+      <span class="mx-1"><fa-icon [icon]="faPenToSquare"></fa-icon></span>
+      <label class="form-label" for="text_editor"
+      >Write Notice Content</label
+      >
+      <div class="input-group mb-2">
+        <editor
+          [init]="text_editor_tools"
+          [ngClass]="{
+              error:
+                getControl('text_editor')?.errors &&
+                getControl('text_editor')?.touched
+            }"
+          formControlName="text_editor"
+          id="text_editor"
+        >
+        </editor>
+      </div>
+      <!--Text editor error message-->
+      <alert
+        *ngIf="text_editor_error_alert_msg"
+        [dismissible]="true"
+        type="danger"
+      >{{ text_editor_error_message }}</alert
+      >
+
+      <div class="col d-flex justify-content-start">
+        <button
+          [disabled]="notice.status === 'INVALID'"
+          class="notice-button w-25 mb-3"
+          type="submit"
+        >
+          Post Notice
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="previous_notice_container"></div>
+</div>

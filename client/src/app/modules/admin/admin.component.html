@@ -1,0 +1,74 @@
+<div class="main-container d-flex">
+  <div [collapse]="isCollapsed" class="sidebar" id="side_nav">
+    <div class="header-box px-2 pt-2 pb-4 d-flex justify-content-between">
+      <button
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="side_nav"
+        class="bars"
+      >
+        <span>
+          <fa-icon [icon]="faBarsStaggered" style="color: white"></fa-icon>
+        </span>
+      </button>
+    </div>
+    <ul class="list-unstyled px-2">
+      <li *ngFor="let sideBarItem of sideBarItems" class="nav-list-item" routerLinkActive="active-link">
+        <fa-icon [icon]="sideBarItem.icon" ></fa-icon>
+        <span>
+          <a routerLink="{{sideBarItem.routerLink}}">{{sideBarItem.routeName}}</a>
+        </span>
+      </li>
+      <li class="nav-list-item">
+        <fa-icon [icon]="faSignOut"></fa-icon>
+        <span>
+          <a routerLink="/">Logout</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between ">
+          <a class="navbar-brand" href="#"
+          ><span class="logo-left"><b>MENTOR</b></span
+          ><span class="logo-right"><b>MIND</b></span></a
+          >
+          <button
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="side_nav"
+            class="bars"
+          >
+            <span><fa-icon [icon]="faBarsStaggered"></fa-icon></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <img
+                alt=""
+                id="profile-img"
+                src="assets/images/top-mentors/mentor.jpg"
+              />
+              <span>Mafuj Ahmed Bishal</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="display-content">
+      <router-outlet></router-outlet>
+      <div
+        *ngIf="windowScrolled"
+        class="d-flex justify-content-end align-items-baseline mt-3"
+      >
+        <button (click)="go_to_top()" class="back_to_top">
+          <fa-icon [icon]="faArrowUp"></fa-icon>
+          Back to Top
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

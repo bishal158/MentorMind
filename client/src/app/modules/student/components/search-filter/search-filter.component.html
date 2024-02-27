@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary mt-4">
+  <div class="container-fluid">
+    <div class="input-group justify-content-start">
+      <span class="p-2" type="button">
+        <fa-icon [icon]="faFilter"></fa-icon>
+      </span>
+      <select class="form-select" id="category">
+        <option selected>Category</option>
+        <option>Database management System</option>
+        <option>Data Structure</option>
+        <option>Algorithm</option>
+        <option>Database management System</option>
+        <option>Data Structure</option>
+        <option>Algorithm</option>
+      </select>
+    </div>
+    <div class="input-group justify-content-end">
+      <input
+        aria-label="Search"
+        class="form-control"
+        placeholder="Search"
+        type="search"
+      />
+      <span class="p-2" type="button">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </span>
+    </div>
+  </div>
+</nav>
