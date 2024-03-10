@@ -1,0 +1,273 @@
+<!--Mentor Profile-->
+<h4 class="heading">Profile</h4>
+<div class="card" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-2 mentor-image">
+      <img
+        alt=""
+        class=""
+        src="assets/images/top-mentors/mentor.jpg"
+        style="height: 100%; width: 100%"
+      />
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h4 class="card-title bar">Mafuj Ahmed Bishal</h4>
+        <h5 class="card-subtitle mt-2">Database Management System</h5>
+        <p class="card-title mt-2">
+          <strong>
+            <fa-icon [icon]="faEnvelope" style="color: teal"></fa-icon>
+          </strong>
+          afnanmafuj22@gmail.com
+        </p>
+        <p class="card-title mt-2">
+          <strong>
+            <fa-icon [icon]="faMobile" style="color: #3b5998"></fa-icon>
+          </strong>
+          01798541625
+        </p>
+        <h6 class="text-start">
+          Your Rating :
+          <rating
+            (keyup)="confirmSelection($event)"
+            [(ngModel)]="rate"
+            [max]="max"
+            [ngClass]="{
+              very_poor: rate >= 0 && rate <= 2,
+              poor: rate > 2 && rate <= 4,
+              fair: rate > 4 && rate <= 6,
+              good: rate > 6 && rate <= 8,
+              excellent: rate > 8 && rate <= 10
+            }"
+            [readonly]="isReadonly"
+            class="rating"
+            tooltip="click and enter to rate"
+          ></rating>
+        </h6>
+        <p class="card-text mt-2">
+          <strong>About:</strong> This is a wider card with supporting text
+          below as a natural lead-in to additional content. This content is a
+          little bit longerThis is a wider card with supporting text below as a
+          natural lead-in to additional content.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Mentor Skills and Social Links-->
+<h4 class="heading">Skills and Social Links</h4>
+<div class="card" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-4 social-links">
+      <ul class="list-group p-2">
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faFacebook"></fa-icon>
+            Facebook
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faTwitter"></fa-icon>
+            Twitter
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faGithub"></fa-icon>
+            GitHub
+          </a>
+        </li>
+        <li class="list-group-item list-group-item-action mb-2">
+          <a href="#">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            Twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8 skills">
+      <ul class="list-group-horizontal p-2">
+        <span class="list-group-item">HTML5</span>
+        <span class="list-group-item">CSS3</span>
+        <span class="list-group-item">JAVASCRIPT</span>
+        <span class="list-group-item">Angular</span>
+        <span class="list-group-item">Bootstrap5</span>
+        <span class="list-group-item">typescript</span>
+        <span class="list-group-item">git and github</span>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--Mentor Qualification and Publications-->
+<h4 class="heading">Qualification and Publications</h4>
+<div class="container-fluid" style="width: 100%">
+  <div class="row">
+    <div class="col-md-12">
+      <tabset>
+        <!--Educational Qualification-->
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faSchool" class="fa-sm mx-1"></fa-icon>
+              <span>Educational Qualification</span>
+            </div>
+          </ng-template>
+          <div class="card mb-2" style="width: 100%">
+            <div class="row">
+              <div class="col-md-2 p-4">
+                <img
+                  alt=""
+                  class=""
+                  src="../../../../../assets/images/others/qualification.svg"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #8400c4">
+                    Mukul Niketon High School
+                  </h4>
+                  <h5 class="card-subtitle mt-2">
+                    Secondary School Certificate
+                  </h5>
+                  <p class="card-title mt-2">
+                    <strong> Result: </strong>
+                    4.95
+                  </p>
+                  <p class="card-title mt-2">
+                    <strong> Group/Department: </strong>
+                    Computer Science and Engineering
+                  </p>
+                  <p class="card-text mt-2">
+                    <strong> Passing Year: </strong>
+                    2024
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <!--Thesis or Project-->
+        <tab class="mt-2 text-dark">
+          <ng-template tabHeading>
+            <div class="tab_header">
+              <fa-icon [icon]="faFileSignature" class="fa-sm mx-1"></fa-icon>
+              <span>Thesis or Project</span>
+            </div>
+          </ng-template>
+          <div class="card mb-2" style="width: 100%">
+            <div class="row">
+              <div class="col-md-2 p-4">
+                <img
+                  alt="...."
+                  class=""
+                  src="../../../../../assets/images/others/Publication.svg"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #8400c4">Project</h4>
+                  <h5 class="card-subtitle mt-2">Mentor Mind</h5>
+                  <p class="card-title mt-2">
+                    <strong>
+                      <fa-icon [icon]="faLink" style="color: #ee436d"></fa-icon>
+                      Link:
+                    </strong>
+                    <a
+                      class="text-decoration-none"
+                      href="http://localhost:4200/"
+                    >Mentor Mind</a
+                    >
+                  </p>
+                  <p class="card-title mt-2">
+                    <strong>
+                      <fa-icon
+                        [icon]="faCalendarDays"
+                        style="color: darkcyan"
+                      ></fa-icon>
+                      Date:
+                    </strong>
+                    20 March,2021
+                  </p>
+                  <p class="card-text mt-2">
+                    <strong> Publication Description: </strong>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longerThis is a wider card with supporting text below as a
+                    natural lead-in to additional content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+<!--Mentor Ongoing and Completed Courses-->
+<h4 class="heading">Ongoing Courses</h4>
+<div class="card mb-3 courses" style="width: 100%">
+  <div class="row g-0">
+    <div class="col-md-3 course_title_section">
+      <img
+        alt="..."
+        class="cover_image"
+        src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220424231007/Web-Development-Roadmap-2022.png"
+      />
+      <!--      <h4>JavaScript Fundamentals</h4>-->
+    </div>
+    <div class="col-md-9 course_details_section">
+      <div class="card-body">
+        <p class="card-title mt-1">
+          <strong> Total Topic: </strong>
+          9
+        </p>
+        <p class="card-text mt-1">
+          <strong>Course Description:</strong>
+          salutatus proin meliore posse debet sagittis sumo porttitor mauris in
+          lobortis inimicus mentitum feugait volutpat
+        </p>
+        <p class="card-title mt-1">
+          <strong> Updated At: </strong>
+          <time>29 April,2023</time>
+        </p>
+        <p class="card-text mt-1">
+          <strong>Course Status:</strong>
+          <strong
+            [(ngModel)]="course_status"
+            ngDefaultControl
+            id="course_status"
+            class="course_status"
+            [ngClass]="{
+              status_completed: course_status === 'Completed',
+              status_inprogress: course_status === 'In Progress'
+            }"
+          >
+            {{ course_status
+            }}<fa-icon
+            [icon]="faSpinner"
+            *ngIf="course_status === 'In Progress'"
+            class="p-1"
+          ></fa-icon
+          ><fa-icon
+            [icon]="faCircleCheck"
+            *ngIf="course_status === 'Completed'"
+            class="p-1"
+          ></fa-icon>
+          </strong>
+          <!-- <button id="status-button" class="status_button"(click)="print()">Add Status</button> -->
+        </p>
+        <a
+          routerLink=""
+          class="edit_button"
+        >View Course <fa-icon [icon]="faArrowRight" class="p-2"></fa-icon>
+        </a>
+        <!-- <p>Selected option: {{ selectedOption }}</p>
+      <p>Button output: {{ printedOption }}</p> -->
+      </div>
+    </div>
+  </div>
+</div>

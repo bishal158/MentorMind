@@ -1,0 +1,51 @@
+<div class="container-fluid mt-5 mb-3" data-aos="fade-up" data-aos-duration="2000">
+  <h1 class="text-center fs-4 fw-bolder" style="color: #8400c4">Our Mentors</h1>
+  <h2 class="text-center fw-bolder mb-3">View Profile for Details</h2>
+  <div class="row mb-4">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="container-fluid">
+        <hr class="text-center fs-2 mb-4" style="color: #8400c4" />
+        <swiper-container
+          class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+          slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+          coverflow-effect-modifier="1" coverflow-effect-slide-shadows="false" autoplay="true"
+        >
+          <swiper-slide class="d-flex justify-content-center mb-4 p-3" *ngFor="let mentor of mentors;">
+            <div class="card">
+              <div class="image-content">
+                <span class="overly"></span>
+                <div class="card-image">
+                  <img
+                    alt=""
+                    class="card-img"
+                    src="{{mentor.imageUrl}}"
+                  />
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">{{mentor.name}}</h2>
+                <rating
+                  [(ngModel)]="mentor.rate"
+                  [max]="max"
+                  [ngClass]="{
+                    very_poor: mentor.rate >= 0 && mentor.rate <= 2,
+                    poor: mentor.rate > 2 && mentor.rate <= 4,
+                    fair: mentor.rate > 4 && mentor.rate <= 6,
+                    good: mentor.rate > 6 && mentor.rate <= 8,
+                    excellent: mentor.rate > 8 && mentor.rate <= 10
+                  }"
+                  [readonly]="isReadonly"
+                  class="text-start"
+                ></rating>
+                <p class="description">{{mentor.subject}}</p>
+                <button class="button" routerLink="/student-mentor-info">
+                  View Profile
+                </button>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+  </div>
+</div>

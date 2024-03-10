@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container-fluid p-3">
+  <div class="row">
+    <h1 class="heading">Notice List</h1>
+    <div class="col-md-8">
+      <accordion [isAnimated]="true">
+        <accordion-group
+          heading="{{ notice.noticeTitle }}"
+          class="list"
+          *ngFor="let notice of noticeLists"
+        >
+          <div class="display-content" [innerHTML]="notice.description"></div>
+          <form
+            *ngIf="notice.attachmentOption === 'yes'"
+            (ngSubmit)="
+              attachmentForm.status !== 'INVALID' &&
+                submit(attachmentForm.value)
+            "
+            [formGroup]="attachmentForm"
+          >
+            <!-- Notice File-->
+            <label class="form-label label" for="attachment"
+              >*** Attach Required File</label
+            >
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-white">
+                <fa-icon
+                  [icon]="faFile"
+                  class="fa-flip fa-lg"
+                  style="color: #8400c4"
+                ></fa-icon>
+              </span>
+              <input
+                [ngClass]="{
+                  error:
+                    getControl('attachment')?.errors &&
+                    getControl('attachment')?.touched
+                }"
+                class="form-control"
+                formControlName="attachment"
+                id="attachment"
+                name="attachment"
+                placeholder="Attach Required File"
+                type="file"
+              />
+            </div>
+            <!--Notice File error message-->
+            <alert
+              *ngIf="attachment_error_alert_msg"
+              [dismissible]="true"
+              type="danger"
+              >{{ attachment_error_message }}</alert
+            >
+            <div class="col d-flex justify-content-start">
+              <button
+                [disabled]="attachmentForm.status === 'INVALID'"
+                class="upload"
+                type="submit"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </accordion-group>
+      </accordion>
+    </div>
+    <div class="col-md-4 p-3">
+      <img class="img-fluid" src="./assets/Notice.svg" alt=".." />
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

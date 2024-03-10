@@ -1,0 +1,45 @@
+<app-search-filter [(ngModel)]="searchText"></app-search-filter>
+<h4 class="header">
+  <div class="text-blur-out">Read Blogs-"Increase Your Knowledge"</div>
+</h4>
+<div class="card blogs mb-3 mt-5 swing-in-left-fwd" *ngFor="let blog of blogs">
+  <div class="row g-0">
+    <div class="col-md-3 image">
+      <figure>
+        <img
+          alt=""
+          class=""
+          src="{{blog.cover_image}}"
+          style="height: 100%; width: 100%"
+        />
+      </figure>
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h4 class="card-title bar">{{blog.title}}</h4>
+        <p class="card-title mt-2">
+          <strong>Published By:</strong> {{blog.author}}
+        </p>
+        <p class="card-text mt-2">
+          <strong>Description:</strong> {{blog.description}}
+        </p>
+        <p class="card-text">
+          <fa-icon [icon]="faStopwatch" class="mx-1"></fa-icon>
+          <time class="text-body-secondary">{{blog.updated_at}}</time>
+        </p>
+        <button class="read_more">
+          <a class="btn" routerLink="/student/show-full-blog"
+            >Read More
+            <fa-icon [icon]="faArrowRight" class="mx-1"></fa-icon>
+          </a>
+        </button>
+        <button class="comments">
+          <a class="btn">
+            <fa-icon [icon]="faComments" class="mx-1"></fa-icon>
+            {{blog.total_comment}}</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

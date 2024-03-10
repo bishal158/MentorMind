@@ -1,0 +1,58 @@
+<div class="main-container d-flex">
+  <div
+    #collapse="ngbCollapse"
+    [(ngbCollapse)]="isCollapsed"
+    [horizontal]="true"
+    class="sidebar"
+    id="side_nav"
+  >
+    <div class="header-box px-2 pt-2 pb-4 d-flex justify-content-between">
+      <button
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="side_nav"
+        class="bars"
+      >
+        <span>
+          <fa-icon [icon]="faBarsStaggered" style="color: white"></fa-icon>
+        </span>
+      </button>
+    </div>
+    <ul class="list-unstyled">
+      <li>
+        <accordion [isAnimated]="true">
+          <accordion-group heading="Introduction">
+            <ul class="list-unstyled">
+              <li>What Data Mining</li>
+            </ul>
+          </accordion-group>
+          <accordion-group heading="Why Data Mining">
+            <li>Why Data Mining</li>
+          </accordion-group>
+          <accordion-group heading="Importance of Data Mining">
+            <li>Importance of Data Mining</li>
+          </accordion-group>
+        </accordion>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between d-block">
+          <button
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="side_nav"
+            class="bars"
+          >
+            <span><fa-icon [icon]="faBarsStaggered"></fa-icon></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="display-content" [innerHTML]="content">
+
+    </div>
+  </div>
+</div>
