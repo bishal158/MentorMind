@@ -5,64 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9549fcd-39a0-42f9-9a5a-86bd158f549b" name="Changes" comment="Readme Updated">
+      <change afterPath="$PROJECT_DIR$/server/models/mentor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/banner/banner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/forgot-password/forgot-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/forgot-password/forgot-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/registration/registration.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/registration/registration.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-mentor-info/student-mentor-info.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/top-mentor/top-mentor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/courses/components/show-courses/show-courses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/courses/components/show-courses/show-courses.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/courses/components/show-courses/show-courses.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/courses/components/show-courses/show-courses.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/courses/courses.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/courses/courses.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/courses/courses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/courses/courses.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/add-skills-and-sociallinks/add-skills-and-sociallinks.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/add-skills-and-sociallinks/add-skills-and-sociallinks.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/add-skills-and-sociallinks/add-skills-and-sociallinks.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/add-skills-and-sociallinks/add-skills-and-sociallinks.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/all-mentees/all-mentees.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/all-mentees/all-mentees.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/all-your-courses/all-your-courses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/all-your-courses/all-your-courses.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/design-your-course/design-your-course.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student-mentor/student-mentor.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/mentor-about/mentor-about.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/my-mentors/my-mentors.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/my-mentors/my-mentors.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/watch-blogs/watch-blogs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/watch-blogs/watch-blogs.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/components/watch-blogs/watch-blogs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/components/watch-blogs/watch-blogs.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/student.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/student/student.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/student/student.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/blogs.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/blogs.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/get-all-mentees.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/get-all-mentees.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-services/student-about.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-services/student-about.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/top-mentors.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,15 +54,18 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/UseR/Desktop/Capture.PNG&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.11.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.30&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/MY CLASS/ALL OF MY PROJECTS/MentorMind&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\UseR\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\MY CLASS\\ALL OF MY PROJECTS\\MentorMind\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\MY CLASS\\ALL OF MY PROJECTS\\MentorMind\\client\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -152,6 +125,25 @@
       <workItem from="1701314363045" duration="1606000" />
       <workItem from="1701566346808" duration="661000" />
       <workItem from="1710082564347" duration="33000" />
+      <workItem from="1710082621430" duration="838000" />
+      <workItem from="1710084867774" duration="11000" />
+      <workItem from="1710338547563" duration="11000" />
+      <workItem from="1710425938487" duration="11000" />
+      <workItem from="1710472232350" duration="445000" />
+      <workItem from="1710502466610" duration="30000" />
+      <workItem from="1710589340723" duration="618000" />
+      <workItem from="1710598730445" duration="52000" />
+      <workItem from="1711029815242" duration="605000" />
+      <workItem from="1711030534254" duration="2649000" />
+      <workItem from="1711083573161" duration="2083000" />
+      <workItem from="1711115628460" duration="6448000" />
+      <workItem from="1711179815510" duration="638000" />
+      <workItem from="1711198278282" duration="6782000" />
+      <workItem from="1711254924493" duration="13545000" />
+      <workItem from="1711275900006" duration="252000" />
+      <workItem from="1711286391225" duration="11820000" />
+      <workItem from="1711338834752" duration="7789000" />
+      <workItem from="1711376704348" duration="5516000" />
     </task>
     <task id="LOCAL-00001" summary="Readme Updated">
       <option name="closed" value="true" />

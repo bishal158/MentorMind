@@ -43,6 +43,8 @@ import { AdminModule } from './modules/admin/admin.module';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NoticeBoardComponent } from './components/notice-board/notice-board.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 
 //swiper js library
 register();
@@ -65,6 +67,8 @@ register();
     LogoComponent,
     PageNotFoundComponent,
     NoticeBoardComponent,
+    AdminLoginComponent,
+    AdminRegisterComponent,
   ],
   imports: [
     BrowserModule,

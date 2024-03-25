@@ -27,11 +27,11 @@ export class RegistrationComponent implements OnInit {
   show_field: boolean = false;
   role_options: any[] = [
     {
-      value: 'Student',
+      value: 1,
       options: 'Student',
     },
     {
-      value: 'Student-Mentor',
+      value: 2,
       options: 'Student-Mentor',
     },
   ];
@@ -234,7 +234,7 @@ export class RegistrationComponent implements OnInit {
     const role_error_control = this.registrationForm.get('role');
     role_error_control?.valueChanges.subscribe((role) => {
       // for show subject field if student-services-mentor is selected
-      this.show_field = role === '2';
+      this.show_field = role == 2;
       this.validate_role(role_error_control as FormControl);
     });
     //subject

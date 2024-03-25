@@ -209,9 +209,9 @@ export class WriteBlogsComponent implements OnInit {
     this.blogService.save_blogs(blog).subscribe((data) => {
       this.toastr.success('Successfully Posted!!', 'Blog');
     });
-
-    let html_content = tinymce.activeEditor?.getContent();
-    console.log(html_content);
+    console.log(blog);
+    // let html_content = tinymce.activeEditor?.getContent();
+    // console.log(html_content);
     this.write_blogs_form.reset();
     tinymce.activeEditor?.setContent('Done');
     // make counter 0 after saving

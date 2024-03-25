@@ -7,11 +7,15 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { StudentMentorInfoComponent } from './components/student-mentor-info/student-mentor-info.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NoticeBoardComponent } from './components/notice-board/notice-board.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'admin/login', component: AdminLoginComponent },
+  { path: 'admin/register', component: AdminRegisterComponent },
   { path: 'forget-password', component: ForgotPasswordComponent },
   { path: 'notices', component: NoticeBoardComponent },
   {

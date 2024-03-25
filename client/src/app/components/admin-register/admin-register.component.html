@@ -1,0 +1,242 @@
+<app-navbar></app-navbar>
+<!--Main Container -->
+<div class="container d-flex justify-content-center">
+  <!--login-->
+  <div class="row border rounded-3 p-5 bg-white shadow box-aria">
+    <!--Logo Side-->
+    <div
+      class="col-md-6 rounded-2 d-flex align-items-center flex-column logo-side"
+    >
+      <!--Logo Div-->
+      <div class="logo">
+        <img
+          alt="Login Image"
+          class="img-fluid"
+          src="../../../assets/images/Login-images/Login1.gif"
+        />
+      </div>
+      <p class="text-center" style="color: darkviolet">Access Account</p>
+      <p class="text-center" style="color: #2d83e5">Where dreams are made</p>
+    </div>
+    <!--Form Side-->
+    <div class="col-md-6">
+      <h3
+        class="text-center text-light rounded-1 mb-2 p-2"
+        style="background-color: #8400c4"
+      >
+        Register New Admin
+      </h3>
+      <form
+        (ngSubmit)="registerForm.status !== 'INVALID' && registered(registerForm.value)"
+        [formGroup]="registerForm"
+        class="col g-3"
+      >
+        <!--name input-->
+        <label class="form-label" for="name">Name</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Name-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-lg fa-flip"
+              style="color: #8400c4"
+            >
+            </fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error: getControl('name')?.errors && getControl('name')?.touched
+            }"
+            class="form-control"
+            formControlName="name"
+            id="name"
+            name="name"
+            placeholder="abc"
+            type="text"
+          />
+        </div>
+        <!--name error message-->
+        <alert
+          *ngIf="name_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ name_error_message }}</alert
+        >
+        <!--name error message ends-->
+        <!--name input ends-->
+
+
+        <!--email input-->
+        <label class="form-label" for="email">Email</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Email-icon">
+            <fa-icon
+              [icon]="faEnvelope"
+              class="fa-lg fa-flip"
+              style="color: #8400c4"
+            >
+            </fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error: getControl('email')?.errors && getControl('email')?.touched
+            }"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            name="email"
+            placeholder="Ex:-abc@gmail.com"
+            type="email"
+          />
+        </div>
+        <!--email error message-->
+        <alert
+          *ngIf="email_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ email_error_message }}</alert
+        >
+        <!--email error message ends-->
+        <!--email input ends-->
+        <!--Profile Picture-->
+        <label class="form-label" for="profile_picture">Profile Picture</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Profile-Picture-icon">
+            <fa-icon
+              [icon]="faUser"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('profile_picture')?.errors &&
+                getControl('profile_picture')?.touched
+            }"
+            class="form-control"
+            formControlName="profile_picture"
+            id="profile_picture"
+            name="profile_picture"
+            type="file"
+            (change)="file($event)"
+          />
+        </div>
+        <!--Profile Picture error message-->
+        <alert
+          *ngIf="profile_picture_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ profile_picture_error_message }}</alert
+        >
+        <!--Password input-->
+        <label class="form-label" for="Password">Password</label>
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-white" id="Password-icon-1">
+            <fa-icon
+              [icon]="fakey"
+              class="fa-lg fa-flip"
+              style="color: #8400c4"
+            ></fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('password')?.errors &&
+                getControl('password')?.touched
+            }"
+            [type]="password_changetype ? 'password' : 'text'"
+            class="form-control"
+            formControlName="password"
+            id="password"
+            name="password"
+            placeholder="Minimum 8-32 Ab12.+-/*@#$! etc"
+          />
+          <span
+            (click)="view1()"
+            class="input-group-text bg-white"
+            id="Password-icon-2"
+          >
+            <fa-icon *ngIf="password_visiable" [icon]="faEyeSlash"></fa-icon>
+            <fa-icon *ngIf="!password_visiable" [icon]="faEye"></fa-icon>
+          </span>
+        </div>
+        <!-- password error message-->
+        <alert
+          *ngIf="password_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ password_error_message }}</alert
+        >
+        <!-- password error message ends -->
+        <!--Password input ends-->
+        <label class="form-label" for="confirmpassword">Confirm password</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-white" id="Password-icon3">
+            <fa-icon
+              [icon]="fakey"
+              class="fa-flip fa-lg"
+              style="color: #8400c4"
+            >
+            </fa-icon>
+          </span>
+          <input
+            [ngClass]="{
+              error:
+                getControl('confirmpassword')?.errors &&
+                getControl('confirmpassword')?.touched
+            }"
+            [type]="confirm_password_changetype ? 'password' : 'text'"
+            class="form-control"
+            formControlName="confirmpassword"
+            id="confirmpassword"
+            name="confirmpassword"
+            placeholder="Minimum 8-32 Ab12.+-/*@#$! etc"
+          />
+          <span
+            (click)="view2()"
+            class="input-group-text bg-white"
+            id="Password-icon4"
+          >
+            <fa-icon
+              *ngIf="confirm_password_visiable"
+              [icon]="faEyeSlash"
+            ></fa-icon>
+            <fa-icon
+              *ngIf="!confirm_password_visiable"
+              [icon]="faEye"
+            ></fa-icon>
+          </span>
+        </div>
+        <!-- Confirmpassword error message -->
+        <alert
+          *ngIf="confirmpassword_error_alert_msg"
+          [dismissible]="true"
+          type="danger"
+        >{{ confirmpassword_error_message }}</alert
+        >
+        <alert
+          *ngIf="
+            getControl('confirmpassword')?.errors &&
+            getControl('confirmpassword')?.errors?.['Mustmatch']
+          "
+          [dismissible]="true"
+          type="danger"
+        >
+          Mismatched Password
+        </alert>
+        <!--submit button-->
+        <div class="col d-flex justify-content-center">
+          <button class="login-button w-100 mb-3" type="submit">Register</button>
+        </div>
+        <!--submit button ends-->
+      </form>
+      <div class="text-center">
+        <p>
+          Already have a account?
+          <a class="active" routerLink="/admin/login">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
