@@ -5,22 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9549fcd-39a0-42f9-9a5a-86bd158f549b" name="Changes" comment="Readme Updated">
-      <change afterPath="$PROJECT_DIR$/server/models/mentor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/admin-login/admin-login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/admin-login/admin-login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/admin-login/admin-login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/admin-login/admin-login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/admin-register/admin-register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/admin-register/admin-register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/admin-register/admin-register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/admin-register/admin-register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/forgot-password/forgot-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/forgot-password/forgot-password.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/notice-board/notice-board.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/notice-board/notice-board.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/registration/registration.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/student-mentor/components/write-blogs/write-blogs.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/blogs.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/blogs.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/get-all-mentees.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-mentor-services/get-all-mentees.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-services/student-about.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/student-services/student-about.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/top-mentors.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/components/top-mentor/top-mentor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/components/top-mentor/top-mentor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/components/mentor-requests/mentor-requests.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/components/mentor-requests/mentor-requests.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/admin/components/post-notice/post-notice.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/admin/components/post-notice/post-notice.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/modules/courses/courses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/courses/courses.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/top-mentors.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/custom-validators/match-password.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/adminController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/mentor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/mentor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/public/uploads/profile_picture-1711381533579-191656656.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +72,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.Angular Application.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -69,7 +93,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="JavaScript Debug.Angular Application">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -144,6 +168,16 @@
       <workItem from="1711286391225" duration="11820000" />
       <workItem from="1711338834752" duration="7789000" />
       <workItem from="1711376704348" duration="5516000" />
+      <workItem from="1711382512912" duration="1426000" />
+      <workItem from="1711514113514" duration="9674000" />
+      <workItem from="1711547551344" duration="6811000" />
+      <workItem from="1711637794231" duration="4484000" />
+      <workItem from="1711643333295" duration="2138000" />
+      <workItem from="1711687322008" duration="4704000" />
+      <workItem from="1711710413518" duration="2307000" />
+      <workItem from="1711718334045" duration="9142000" />
+      <workItem from="1711804337599" duration="9248000" />
+      <workItem from="1711895541844" duration="5271000" />
     </task>
     <task id="LOCAL-00001" summary="Readme Updated">
       <option name="closed" value="true" />

@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { user } from '../../constants/constants';
 import {
   faEnvelope,
   faEye,
   faEyeSlash,
   faKey,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebook,
-  faGithub,
-  faGoogle,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
 import {
   AbstractControl,
   FormBuilder,
@@ -20,6 +15,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -68,6 +64,7 @@ export class AdminLoginComponent implements OnInit {
     private formbuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
+    private authService: AuthService,
   ) {}
 
   view() {
@@ -140,15 +137,29 @@ export class AdminLoginComponent implements OnInit {
       titleClass: 'toast-title',
     });
   }
+  showError(message: string) {
+    this.toastr.error(message, 'Admin login', {
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      titleClass: 'toast-title',
+    });
+  }
 
-  logged_in() {
-    this.loginForm.reset();
-
-    // console.log(
-    //   this.loginForm.value,
-    //   this.loginForm.invalid,
-    //   this.email_error_message,
-    // );
-    this.router.navigate(['/admin']).then((r) => this.showSuccess());
+  logged_in(userForm: any) {
+    this.authService.login_admin(userForm).subscribe({
+      next: (res) => {
+        localStorage.setItem(user, JSON.stringify(res));
+        this.loginForm.reset();
+      },
+      error: (err) => {
+        // console.log(err.error.message);
+        this.showError(err.error.message);
+      },
+      complete: () => {
+        this.router
+          .navigate(['/admin/dashboard'])
+          .then(() => this.showSuccess());
+      },
+    });
   }
 }

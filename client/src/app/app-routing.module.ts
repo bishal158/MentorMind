@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'admin/login', component: AdminLoginComponent },
-  { path: 'admin/register', component: AdminRegisterComponent },
+  { path: 'login/admin', component: AdminLoginComponent },
+  { path: 'register/admin', component: AdminRegisterComponent },
   { path: 'forget-password', component: ForgotPasswordComponent },
   { path: 'notices', component: NoticeBoardComponent },
   {

@@ -135,7 +135,7 @@ export class AdminRegisterComponent implements OnInit {
 
   validate_name(name_error_control: FormControl): void {
     this.name_error_message = ' ';
-    this.email_error_alert_msg = false;
+    this.name_error_alert_msg = false;
     if (
       name_error_control.invalid &&
       (name_error_control.touched || name_error_control.dirty)
@@ -255,6 +255,7 @@ export class AdminRegisterComponent implements OnInit {
       titleClass: 'toast-title',
     });
   }
+  // file upload
   profile_picture: any | undefined;
   file(event: any) {
     this.profile_picture = <File>event.target.files[0];
@@ -274,7 +275,7 @@ export class AdminRegisterComponent implements OnInit {
         this.showError(e.error.error);
       },
       complete: () =>
-        this.router.navigate(['/admin/login']).then(() => this.showSuccess()),
+        this.router.navigate(['/login/admin']).then(() => this.showSuccess()),
     });
   }
 }

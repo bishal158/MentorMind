@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 import {
   faBarsStaggered,
@@ -14,32 +13,36 @@ import {
   faGraduationCap,
   faFile,
 } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../../services/auth.service';
+import { user } from '../../constants/constants';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
-export class AdminComponent {
-  isCollapsed = false;
-  windowScrolled = false;
-  constructor(private scroller: ViewportScroller) {}
-  ngOnInit() {
-    window.addEventListener('scroll', () => {
-      this.windowScrolled = window.pageYOffset !== 0;
-    });
-  }
-
-  go_to_top() {
-    this.scroller.scrollToAnchor('side_nav');
-  }
-
+export class AdminComponent implements OnInit {
   protected readonly faArrowUp = faArrowUp;
   protected readonly faBarsStaggered = faBarsStaggered;
   protected readonly faSignOut = faSignOut;
   protected readonly faEye = faEye;
   protected readonly faUser = faUser;
-
+  isCollapsed = false;
+  windowScrolled = false;
+  AdminInfo: any = null;
+  constructor(private authService: AuthService) {}
+  ngOnInit() {
+    let userInfo = localStorage.getItem(user);
+    // console.log(userInfo);
+    if (userInfo) {
+      this.AdminInfo = JSON.parse(userInfo);
+    } else {
+      this.AdminInfo = {};
+    }
+  }
+  go_to_top() {
+    window.scrollTo(0, 0);
+  }
   sideBarItems = [
     {
       routerLink: '/admin/dashboard',
@@ -71,5 +74,10 @@ export class AdminComponent {
       routeName: 'Uploaded Cv/Resume',
       icon: faFile,
     },
+    // {
+    //   routerLink: '/',
+    //   routeName: 'Logout',
+    //   icon: faSignOut,
+    // }
   ];
 }

@@ -8,10 +8,12 @@ import { AllMenteesComponent } from './components/all-mentees/all-mentees.compon
 import { PostNoticeComponent } from './components/post-notice/post-notice.component';
 import { AllCvResumeComponent } from './components/all-cv-resume/all-cv-resume.component';
 import { MentorAboutComponent } from './components/mentor-about/mentor-about.component';
+import { authGuard } from '../../guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'admin',
+    canActivate: [authGuard],
     component: AdminComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },

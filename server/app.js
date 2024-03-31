@@ -21,12 +21,13 @@ const connectDb = async () => {
 connectDb().then((r) => console.log("Connected to Database"));
 
 app.use(cookieParser());
-app.use(cors());
+app.use(express.json());
+
+app.use(cors({ credentials: true, origin: "http://localhost:4200" }));
 
 // set static folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 // routes
-app.use(express.json());
 const userRouter = require("./routes/user");
 const adminRouter = require("./routes/admin");
 app.use("/user", userRouter);

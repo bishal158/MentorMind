@@ -1,20 +1,21 @@
 const mongoose = require("mongoose");
 
-const adminSchema = new mongoose.Schema(
+const noticeSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    email: {
+    attachment: {
       type: String,
       required: true,
     },
-    profile_picture: {
+    attachment_option: {
       type: String,
       required: true,
+      enum: ["yes", "no"],
     },
-    password: {
+    content: {
       type: String,
       required: true,
     },
@@ -24,6 +25,6 @@ const adminSchema = new mongoose.Schema(
   },
 );
 
-const adminModel = mongoose.model("Admin", adminSchema);
+const noticeModel = mongoose.model("Admin", noticeSchema);
 
-module.exports = adminModel;
+module.exports = noticeModel;

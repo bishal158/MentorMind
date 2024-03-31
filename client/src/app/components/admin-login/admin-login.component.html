@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <!--Main Container -->
 <div class="container d-flex justify-content-center">
   <!--login-->
@@ -27,7 +27,7 @@
         Login Admin
       </h3>
       <form
-        (ngSubmit)="loginForm.status !== 'INVALID' && logged_in()"
+        (ngSubmit)="loginForm.status !== 'INVALID' && logged_in(loginForm.value)"
         [formGroup]="loginForm"
         class="col g-3"
       >
@@ -112,7 +112,7 @@
       </form>
       <div class="text-center">
           Not a Admin?
-          <a class="active" routerLink="/admin/register">Register</a>
+          <a class="active" routerLink="/register/admin">Register</a>
       </div>
     </div>
   </div>

@@ -1,3 +1,5 @@
-
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
-
+<button *ngIf="windowScrolled" (click)="go_to_top()" class="back_to_top">
+  <fa-icon [icon]="faArrowUp"></fa-icon>
+</button>

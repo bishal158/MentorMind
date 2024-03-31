@@ -1,15 +1,20 @@
 const mongoose = require("mongoose");
 
-const mentorSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Types.ObjectId,
-    ref: "User",
+const mentorSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
+    skills: {
+      type: mongoose.Types.ObjectId,
+      ref: "Skill",
+    },
   },
-  skills: {
-    type: mongoose.Types.ObjectId,
-    ref: "Skill",
+  {
+    timestamps: true,
   },
-});
+);
 
 const mentorModel = mongoose.model("Mentor", mentorSchema);
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Aos from 'aos';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,17 @@ import * as Aos from 'aos';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  windowScrolled: boolean = false;
   constructor() {
     Aos.init();
   }
-  ngOnInit() {}
+  ngOnInit() {
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+  go_to_top() {
+    window.scrollTo(0, 0);
+  }
+  protected readonly faArrowUp = faArrowUp;
 }

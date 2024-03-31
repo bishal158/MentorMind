@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TopMentorsService } from '../../services/top-mentors.service';
 
 @Component({
   selector: 'app-top-mentor',
@@ -64,9 +63,5 @@ export class TopMentorComponent {
       subject: 'Database Management System',
     },
   ];
-  constructor(private topsMentorsService: TopMentorsService) {
-    this.topsMentorsService.getTopMentors().subscribe((topMentors) => {
-      this.topMentors = topMentors;
-    });
-  }
+  constructor() {}
 }
